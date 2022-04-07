@@ -1,5 +1,125 @@
+:root {
+  --side-margin: 5vw;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+  background: black;
+}
+
+a {
+  color: white;
+}
+
+.header {
+  position: fixed;
+  width: 100vw;
+  height: 100px;
+  padding: 0 var(--side-margin);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABVJREFUGFdjZGBg+M/AwMDIyAAB/wEPKAICWy/88wAAAABJRU5ErkJggg==") repeat;
+}
+
+#logo {
+  position: relative;
+  font-weight: 500;
+}
+
+#logo a {
+  text-decoration: none;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu a {
+  margin-left: 2em;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+.content {
+  position: absolute;
+  width: min(90vw, 900px);
+  margin: 0 max(calc(50vw - 450px), var(--side-margin));
+  padding-bottom: 5em;
+}
+
+#start {
+  position: relative;
+  clear: both;
+  width: 100%;
+  font-size: 2.4em;
+  line-height: 1.5em;
+  padding-top: 5em;
+}
+
+#start p {
+  font-weight: 300;
+  margin-bottom: 0.5em;
+}
+
+#projects, #people {
+  position: relative;
+  clear: both;
+  width: 100%;
+  margin-top: 8em;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+#people .section {
+  position: relative;
+  clear: both;
+  width: 100%;
+  margin-top: 2em;
+}
+
+#people .section span {
+  position: relative;
+  margin-bottom: 0.25em;
+}
+
+#people .section span.name {
+  font-size: 1.2em;
+  font-weight: 500;
+  width: 100%;
+  display: inline-block;
+}
+
+span.title {
+  font-weight: 100;
+  width: 100%;
+  display: inline-block;
+}
+
+span.email, span.web {
+  margin-right: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  #start {
+    font-size: 1.5em;
+  }
 }

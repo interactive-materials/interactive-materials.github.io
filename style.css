@@ -18,14 +18,6 @@ body {
   overflow-x: hidden;
 }
 
-body::after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  content: url("assets/joinery-1.jpg") url("assets/mechamagnets-1.jpg") url("assets/ppm-1.jpg") url("assets/sensing-kirigami-1.jpg") url("assets/sensing-kirigami-2.jpg") url("assets/shape-haptics-1.jpg");
-}
-
 a {
   color: white;
 }

@@ -31,7 +31,7 @@ a {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAAXNSR0IArs4c6QAAACBJREFUGFdjZEAF/2FcRgYGBjiHgYEBxAcDOAPKJ6wDANLQBAO9EaMmAAAAAElFTkSuQmCC") repeat;
+  /* background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAAXNSR0IArs4c6QAAACBJREFUGFdjZEAF/2FcRgYGBjiHgYEBxAcDOAPKJ6wDANLQBAO9EaMmAAAAAElFTkSuQmCC") repeat; */
 }
 
 #logo {

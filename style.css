@@ -31,7 +31,7 @@ a {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAA9JREFUGFdjZIACRij9HwABLAECEnZjzQAAAABJRU5ErkJggg==") repeat;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABVJREFUGFdjZGBg+M/AwMDIyAAB/wEPKAICWy/88wAAAABJRU5ErkJggg==") repeat;
 }
 
 #logo {
@@ -85,7 +85,7 @@ a {
   position: absolute;
   width: 100vw;
   height: calc(100vh - var(--menu-height));
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAA9JREFUGFdjZIACRij9HwABLAECEnZjzQAAAABJRU5ErkJggg==") repeat;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABVJREFUGFdjZGBg+M/AwMDIyAAB/wEPKAICWy/88wAAAABJRU5ErkJggg==") repeat;
 }
 
 .content {

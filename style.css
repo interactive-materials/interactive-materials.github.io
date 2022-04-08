@@ -52,7 +52,7 @@ a {
 .menu a {
   margin-left: 2em;
   text-decoration: none;
-  font-weight: 100;
+  font-weight: 200;
   background: black;
   padding: 0.2em 0;
   cursor: pointer;
@@ -120,7 +120,7 @@ a {
 .heading {
   text-transform: uppercase;
   font-size: 1.5em;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .project {
@@ -182,7 +182,7 @@ a {
 .project .project-links a {
   margin: 0 1em 0 0;
   font-family: monospace;
-  font-weight: 100;
+  font-weight: 200;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -223,7 +223,7 @@ a {
 }
 
 span.person-title {
-  font-weight: 100;
+  font-weight: 200;
   width: 100%;
   display: inline-block;
 }

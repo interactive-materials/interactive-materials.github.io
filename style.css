@@ -1,5 +1,6 @@
 :root {
   --side-margin: 5vw;
+  --menu-height: 100px;
 }
 
 * {
@@ -23,13 +24,13 @@ a {
 .header {
   position: fixed;
   width: 100vw;
-  height: 100px;
+  height: var(--menu-height);
   padding: 0 var(--side-margin);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABVJREFUGFdjZGBg+M/AwMDIyAAB/wEPKAICWy/88wAAAABJRU5ErkJggg==") repeat;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAAXNSR0IArs4c6QAAACBJREFUGFdjZEAF/2FcRgYGBjiHgYEBxAcDOAPKJ6wDANLQBAO9EaMmAAAAAElFTkSuQmCC") repeat;
 }
 
 #logo {
@@ -39,6 +40,8 @@ a {
 
 #logo a {
   text-decoration: none;
+  background: black;
+  padding: 0.2em 0;
 }
 
 .menu {
@@ -49,13 +52,45 @@ a {
   margin-left: 2em;
   text-decoration: none;
   font-weight: 100;
+  background: black;
+  padding: 0.2em 0;
+}
+
+#gallery {
+  position: absolute;
+  top: var(--menu-height);
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - var(--menu-height));
+}
+
+#gallery-A, #gallery-B {
+  position: absolute;
+  width: 60vw;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: brightness(0.7);
+  transition: opacity 2s ease-in-out;
+}
+
+#gallery-A.active, #gallery-B.active {
+  opacity: 1.0;
+}
+
+#gallery-cover {
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - var(--menu-height));
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAAXNSR0IArs4c6QAAACBJREFUGFdjZEAF/2FcRgYGBjiHgYEBxAcDOAPKJ6wDANLQBAO9EaMmAAAAAElFTkSuQmCC") repeat;
 }
 
 .content {
   position: absolute;
-  width: min(90vw, 900px);
-  margin: 0 max(calc(50vw - 450px), var(--side-margin));
-  padding-bottom: 5em;
+  width: min(90vw, 1000px);
+  margin: 0 max(calc(50vw - 500px), var(--side-margin));
+  padding: 0 50px 5em 50px;
 }
 
 #start {
@@ -64,12 +99,12 @@ a {
   width: 100%;
   font-size: 2.4em;
   line-height: 1.5em;
-  padding-top: 5em;
+  padding-top: 7em;
 }
 
 #start p {
   font-weight: 300;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 #projects, #people {
@@ -121,5 +156,15 @@ span.email, span.web {
 
   #start {
     font-size: 1.5em;
+  }
+
+  .content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #gallery-A, #gallery-B {
+    width: 80vw;
+    height: 50vh;
   }
 }

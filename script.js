@@ -17,6 +17,11 @@ window.onload = () => {
     }, 10000);
   }, 6000);
 
+  imgArray.forEach(img => {
+    let imgObj = document.createElement("img");
+    imgObj.src = img;
+  });
+
   document.querySelector("#menu-projects").addEventListener("click", (e) => {
     document.querySelector("#projects").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   });

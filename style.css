@@ -234,6 +234,7 @@ span.person-title {
 }
 
 span.email, span.web {
+  font-size: 0.8em;
   margin-right: 1em;
   white-space: nowrap;
 }

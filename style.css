@@ -101,7 +101,7 @@ a {
   width: 100%;
   font-size: 2.4em;
   line-height: 1.5em;
-  padding-top: 7em;
+  padding-top: 5em;
 }
 
 #start p {
@@ -163,6 +163,10 @@ a {
   cursor: pointer;
   font-weight: 100;
   font-size: 0.8em;
+}
+
+.project.open .project-open {
+  top: calc(var(--menu-height) + 0.2em);
 }
 
 .project .project-title {
@@ -231,6 +235,7 @@ span.person-title {
 
 span.email, span.web {
   margin-right: 1em;
+  white-space: nowrap;
 }
 
 @media only screen and (max-width: 600px) {

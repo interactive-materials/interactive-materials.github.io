@@ -15,6 +15,15 @@ body {
   font-weight: 300;
   color: white;
   background: black;
+  overflow-x: hidden;
+}
+
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  content: url("assets/joinery-1.jpg") url("assets/mechamagnets-1.jpg") url("assets/ppm-1.jpg") url("assets/sensing-kirigami-1.jpg") url("assets/sensing-kirigami-2.jpg") url("assets/shape-haptics-1.jpg");
 }
 
 a {
@@ -54,6 +63,7 @@ a {
   font-weight: 100;
   background: black;
   padding: 0.2em 0;
+  cursor: pointer;
 }
 
 #gallery {
@@ -90,7 +100,7 @@ a {
   position: absolute;
   width: min(90vw, 1000px);
   margin: 0 max(calc(50vw - 500px), var(--side-margin));
-  padding: 0 50px 5em 50px;
+  padding: 0 50px 15em 50px;
 }
 
 #start {
@@ -111,7 +121,8 @@ a {
   position: relative;
   clear: both;
   width: 100%;
-  margin-top: 8em;
+  margin-top: 10em;
+  background: black;
 }
 
 .heading {
@@ -120,11 +131,91 @@ a {
   font-weight: 100;
 }
 
+.project {
+  position: relative;
+  clear: both;
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  margin: 3em 0 4em 0;
+  border-top: 1px solid #666;
+  padding-top: 1em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.project::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+.project.open {
+  cursor: default;
+  max-height: 3000px;
+}
+
+.project.open::after {
+  background: none;
+}
+
+.project .project-open {
+  position: absolute;
+  top: 1.2em;
+  right: 0;
+  cursor: pointer;
+  font-weight: 100;
+  font-size: 0.8em;
+}
+
+.project .project-title {
+  position: relative;
+  width: 100%;
+  font-weight: 500;
+  font-size: 2.4em;
+  margin-top: 1.0rem;
+  margin-bottom: 1.0rem;
+}
+
+.project .project-links {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2.0rem;
+}
+
+.project .project-links a {
+  margin: 0 1em 0 0;
+  font-family: monospace;
+  font-weight: 100;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.project .project-links a::before {
+  content: "\21B3";
+  padding-right: 0.25em;
+}
+
+.project .project-content {
+  position: relative;
+  width: 100%;
+}
+
+.project .project-content p {
+  max-width: 700px;
+  line-height: 1.5;
+  margin-bottom: 1.0em;
+}
+
 #people .section {
   position: relative;
   clear: both;
   width: 100%;
-  margin-top: 2em;
+  margin-top: 3em;
 }
 
 #people .section span {
@@ -139,7 +230,7 @@ a {
   display: inline-block;
 }
 
-span.title {
+span.person-title {
   font-weight: 100;
   width: 100%;
   display: inline-block;

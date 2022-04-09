@@ -84,7 +84,7 @@ a {
 #gallery-cover {
   position: absolute;
   width: 100vw;
-  height: calc(100vh - var(--menu-height));
+  height: 100%;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAABZJREFUGFdjZEADjFD+fyjNiFMArhEARd4CBSFQSzYAAAAASUVORK5CYII=") repeat;
 }
 
@@ -162,8 +162,8 @@ a {
   top: 1.2em;
   right: 0;
   cursor: pointer;
-  font-weight: 100;
-  font-size: 0.8em;
+  font-weight: 200;
+  font-size: 0.9em;
 }
 
 .project.open .project-open {

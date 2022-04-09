@@ -1,4 +1,4 @@
-let active = -1;
+let active = -1, x = -1, y = -1;
 let activeGallery = "A";
 const imgArray = [
   "assets/shape-haptics-1.jpg",
@@ -24,10 +24,12 @@ window.onload = () => {
 
   document.querySelector("#menu-projects").addEventListener("click", (e) => {
     document.querySelector("#projects").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    history.pushState("", "", "/#projects");
   });
 
   document.querySelector("#menu-people").addEventListener("click", (e) => {
     document.querySelector("#people").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    history.pushState("", "", "/#people");
   });
 
   document.querySelectorAll(".project").forEach((p) => {
@@ -63,15 +65,21 @@ const loadImage = () => {
   const h = document.querySelector(`#gallery`).offsetHeight;
   const wg = gallery.offsetWidth;
   const hg = gallery.offsetHeight;
-
-  const top = Math.floor(Math.random() * 0.75 * (h - hg));
+  
+  let t = Math.random() * 0.9;
   let l = Math.random();
-  // l = l < 0.5 ? 0.05 + l * 0.2 : 0.95 - 0.2 * (1 - l);
-  const left = Math.floor(l * (w - wg));
+  
+  while(Math.pow(t - y, 2) + Math.pow(l - x, 2) < 0.3) {
+    t = Math.random() * 0.9;
+    l = Math.random();
+  }
+  
+  x = l;
+  y = t;
 
   gallery.style.backgroundImage = `url("${imgArray[active]}")`
-  gallery.style.top = top + "px";
-  gallery.style.left = left + "px";
+  gallery.style.top = Math.floor(y * (h - hg)) + "px";
+  gallery.style.left = Math.floor(x * (w - wg)) + "px";
 
   gallery.classList.add("active");
   activeGallery = activeGallery === "A" ? "B" : "A";
@@ -82,6 +90,7 @@ const open = (ele) => {
   ele.classList.add("open");
   ele.querySelector(".project-open").innerHTML = "close";
   ele.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  history.pushState("", "", `#${ele.id}`);
 }
 
 const close = (ele) => {

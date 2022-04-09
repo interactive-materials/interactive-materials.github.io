@@ -19,7 +19,14 @@ window.onload = () => {
 
   imgArray.forEach(img => {
     let imgObj = document.createElement("img");
+    imgObj.onload = () => {
+    }
     imgObj.src = img;
+  });
+  
+  document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
+  window.addEventListener("resize", (e) => {
+    document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
   });
 
   document.querySelector("#menu-projects").addEventListener("click", (e) => {

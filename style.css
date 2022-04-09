@@ -210,6 +210,13 @@ a {
   margin-bottom: 2em;
 }
 
+.project .project-content .block iframe {
+  position: relative;
+  float: left;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
 .project .project-content .block p {
   max-width: 700px;
   line-height: 1.5;
@@ -220,6 +227,7 @@ a {
   position: relative;
   float: left;
   width: 100%;
+  padding-right: 1em;
 }
 
 .project .half {
@@ -274,7 +282,7 @@ span.email, span.web {
   white-space: nowrap;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   body {
     font-size: 15px;
   }
@@ -293,7 +301,7 @@ span.email, span.web {
     height: 50vh;
   }
   
-  .project .half, .project .third {
+  .project .full, .project .half, .project .third {
     width: 100%;
     padding-right: 0;
   }

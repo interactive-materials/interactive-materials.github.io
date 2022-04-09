@@ -113,7 +113,7 @@ a {
   position: relative;
   clear: both;
   width: 100%;
-  margin-top: 10em;
+  padding-top: calc(var(--menu-height) + 2em);
   background: black;
 }
 
@@ -133,7 +133,7 @@ a {
   border-top: 1px solid #666;
   padding-top: 1em;
   cursor: pointer;
-  transition: all 200ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .project::after {
@@ -150,7 +150,7 @@ a {
 .project.open {
   cursor: default;
   padding-top: var(--menu-height);
-  max-height: 3000px;
+  max-height: 6000px;
 }
 
 .project.open::after {

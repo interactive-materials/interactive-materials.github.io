@@ -162,8 +162,8 @@ a {
   top: 1.2em;
   right: 0;
   cursor: pointer;
-  font-weight: 100;
-  font-size: 0.8em;
+  font-weight: 200;
+  font-size: 0.9em;
 }
 
 .project.open .project-open {

@@ -24,6 +24,18 @@ window.onload = () => {
     imgObj.src = img;
   });
   
+  let url = window.location.href;
+  url = url.split("/");
+  if (url.length > 1) {
+    let id = url.at(-1);
+    if (id.charAt(0) === "#") {
+      let proj = document.querySelector(id);
+      if (proj.classList.contains("project")) {
+        open(proj);
+      }
+    }
+  }
+  
   document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
   window.addEventListener("resize", (e) => {
     document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";

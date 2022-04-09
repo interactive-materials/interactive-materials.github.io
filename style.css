@@ -274,7 +274,7 @@ span.email, span.web {
   white-space: nowrap;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   body {
     font-size: 15px;
   }

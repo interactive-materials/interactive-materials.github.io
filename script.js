@@ -19,6 +19,8 @@ window.onload = () => {
 
   imgArray.forEach(img => {
     let imgObj = document.createElement("img");
+    imgObj.onload = () => {
+    }
     imgObj.src = img;
   });
 

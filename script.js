@@ -23,6 +23,11 @@ window.onload = () => {
     }
     imgObj.src = img;
   });
+  
+  document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
+  window.addEventListener("resize", (e) => {
+    document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
+  });
 
   document.querySelector("#menu-projects").addEventListener("click", (e) => {
     document.querySelector("#projects").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});

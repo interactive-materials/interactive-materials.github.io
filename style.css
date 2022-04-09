@@ -214,7 +214,7 @@ a {
   position: relative;
   float: left;
   width: 100%;
-  margin-bottom: 2em;
+  aspect-ratio: 16/9;
 }
 
 .project .project-content .block p {
@@ -227,6 +227,7 @@ a {
   position: relative;
   float: left;
   width: 100%;
+  padding-right: 1em;
 }
 
 .project .half {
@@ -300,7 +301,7 @@ span.email, span.web {
     height: 50vh;
   }
   
-  .project .half, .project .third {
+  .project .full, .project .half, .project .third {
     width: 100%;
     padding-right: 0;
   }

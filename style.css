@@ -210,6 +210,13 @@ a {
   margin-bottom: 2em;
 }
 
+.project .project-content .block iframe {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
 .project .project-content .block p {
   max-width: 700px;
   line-height: 1.5;

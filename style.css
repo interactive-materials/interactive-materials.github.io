@@ -68,8 +68,8 @@ a {
 
 #gallery-A, #gallery-B {
   position: absolute;
-  width: 60vw;
-  height: 60vh;
+  width: 50%;
+  height: 60%;
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -101,10 +101,16 @@ a {
   width: 100%;
   font-size: 2.4em;
   line-height: 1.5em;
-  padding-top: 5em;
+  padding-top: var(--menu-height);
+  min-height: calc(100vh - var(--menu-height));
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 #start p {
+  width: 100%;
   font-weight: 300;
   margin-bottom: 1em;
 }
@@ -164,7 +170,7 @@ a {
   cursor: pointer;
   font-weight: 200;
   font-size: 0.9em;
-  z-index: 99;
+  z-index: 98;
 }
 
 .project.open .project-open {
@@ -190,6 +196,7 @@ a {
   margin: 0 1em 0 0;
   font-family: monospace;
   font-weight: 200;
+  font-size: 0.9em;
   text-decoration: none;
   white-space: nowrap;
 }

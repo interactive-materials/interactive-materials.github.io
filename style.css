@@ -63,7 +63,7 @@ a {
   top: var(--menu-height);
   left: 0;
   width: 100vw;
-  height: calc(100vh - var(--menu-height));
+  min-height: calc(100vh - var(--menu-height));
 }
 
 #gallery-A, #gallery-B {

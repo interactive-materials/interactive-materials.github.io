@@ -68,8 +68,8 @@ a {
 
 #gallery-A, #gallery-B {
   position: absolute;
-  width: 60vw;
-  height: 60vh;
+  width: 60%;
+  height: 60%;
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -164,7 +164,7 @@ a {
   cursor: pointer;
   font-weight: 200;
   font-size: 0.9em;
-  z-index: 99;
+  z-index: 98;
 }
 
 .project.open .project-open {
@@ -190,6 +190,7 @@ a {
   margin: 0 1em 0 0;
   font-family: monospace;
   font-weight: 200;
+  font-size: 0.9em;
   text-decoration: none;
   white-space: nowrap;
 }

@@ -63,7 +63,7 @@ a {
   top: var(--menu-height);
   left: 0;
   width: 100vw;
-  min-height: calc(100vh - var(--menu-height));
+  height: calc(100vh - var(--menu-height));
 }
 
 #gallery-A, #gallery-B {
@@ -101,10 +101,16 @@ a {
   width: 100%;
   font-size: 2.4em;
   line-height: 1.5em;
-  padding-top: 5em;
+  padding-top: var(--menu-height);
+  min-height: calc(100vh - var(--menu-height));
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 #start p {
+  width: 100%;
   font-weight: 300;
   margin-bottom: 1em;
 }

@@ -90,8 +90,8 @@ a {
 
 .content {
   position: absolute;
-  width: min(90vw, 1400px);
-  margin: 0 max(calc(50vw - 700px), var(--side-margin));
+  width: min(90vw, 1200px);
+  margin: 0 max(calc(50vw - 600px), var(--side-margin));
   padding: 0 50px 15em 50px;
 }
 

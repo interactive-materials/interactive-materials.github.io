@@ -231,27 +231,6 @@ a {
   margin-bottom: 1.0em;
 }
 
-.project .full {
-  position: relative;
-  float: left;
-  width: 100%;
-  padding-right: 1em;
-}
-
-.project .half {
-  position: relative;
-  float: left;
-  width: 50%;
-  padding-right: 1em;
-}
-
-.project .third {
-  position: relative;
-  float: left;
-  width: 33.3%;
-  padding-right: 1em;
-}
-
 .project img {
   position: relative;
   width: 100%;
@@ -261,8 +240,7 @@ a {
 
 #people .section {
   position: relative;
-  clear: both;
-  width: 100%;
+  min-height: 5em;
   margin-top: 3em;
 }
 
@@ -290,6 +268,27 @@ span.email, span.web {
   white-space: nowrap;
 }
 
+.full {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding-right: 1em;
+}
+
+.half {
+  position: relative;
+  float: left;
+  width: 50%;
+  padding-right: 1em;
+}
+
+.third {
+  position: relative;
+  float: left;
+  width: 33.3%;
+  padding-right: 1em;
+}
+
 @media only screen and (max-width: 800px) {
   body {
     font-size: 15px;
@@ -309,7 +308,7 @@ span.email, span.web {
     height: 50vh;
   }
   
-  .project .full, .project .half, .project .third {
+  .full, .half, .third {
     width: 100%;
     padding-right: 0;
   }

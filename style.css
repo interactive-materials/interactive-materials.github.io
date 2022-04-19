@@ -99,7 +99,7 @@ a {
   position: relative;
   clear: both;
   width: 100%;
-  font-size: 2.4em;
+  font-size: 2.5em;
   line-height: 1.5em;
   padding-top: calc(var(--menu-height) * 2);
   min-height: calc(100vh - var(--menu-height));

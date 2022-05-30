@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'Satoshi-Variable';
+  src: url('fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('fonts/Satoshi-Variable.woff') format('woff'),
+       url('fonts/Satoshi-Variable.ttf') format('truetype');
+       font-weight: 300 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Switzer-Variable';
+  src: url('fonts/Switzer-Variable.woff2') format('woff2'),
+       url('fonts/Switzer-Variable.woff') format('woff'),
+       url('fonts/Switzer-Variable.ttf') format('truetype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
 :root {
   --side-margin: 5vw;
   --menu-height: 100px;
@@ -10,7 +30,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Satoshi-Variable", sans-serif;
   font-size: 18px;
   font-weight: 300;
   color: white;
@@ -229,6 +249,13 @@ a {
   max-width: 700px;
   line-height: 1.5;
   margin-bottom: 1.0em;
+}
+
+.project .project-content .block p small {
+  display: inline-block;
+  max-width: 700px;
+  font-size: 0.8em;
+  line-height: 1.1;
 }
 
 .project img {

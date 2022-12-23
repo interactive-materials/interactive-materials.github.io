@@ -33,12 +33,14 @@ window.onload = () => {
   });
 
   document.querySelector("#menu-projects").addEventListener("click", (e) => {
-    document.querySelector("#projects").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
+    // document.querySelector("#projects").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     history.pushState("", "", "#projects");
   });
 
   document.querySelector("#menu-people").addEventListener("click", (e) => {
-    document.querySelector("#people").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
+    // document.querySelector("#people").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     history.pushState("", "", "#people");
   });
 

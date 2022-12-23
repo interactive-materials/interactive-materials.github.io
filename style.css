@@ -51,13 +51,14 @@ hr {
 .header {
   position: fixed;
   width: 100vw;
-  height: var(--menu-height);
+  height: calc(var(--menu-height) * 0.3);
+  margin: calc(var(--menu-height) * 0.35) 0;
   padding: 0 var(--side-margin);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  /* background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAABZJREFUGFdjZEACjCD2/////4NoFA4AaA0H/HojyUcAAAAASUVORK5CYII=") repeat; */
+  background: none;
 }
 
 #logo {
@@ -354,6 +355,10 @@ span.email {
 @media only screen and (max-width: 800px) {
   body {
     font-size: 15px;
+  }
+
+  .header {
+    background: white;
   }
 
   #start {

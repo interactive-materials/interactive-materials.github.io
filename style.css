@@ -126,7 +126,7 @@ hr {
   position: relative;
   clear: both;
   width: 100%;
-  font-size: 2.2em;
+  font-size: 2.0em;
   line-height: 1.5em;
   padding-top: calc(var(--menu-height));
   min-height: 100vh;
@@ -146,15 +146,25 @@ hr {
   position: relative;
   clear: both;
   width: 100%;
-  margin-top: var(--menu-height);
+  margin-top: calc(var(--menu-height));
   padding: 2em 0;
   background: white;
+}
+
+#projects {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin-bottom: 4em;
 }
 
 .heading {
   text-transform: uppercase;
   font-size: 1.4em;
   font-weight: 900;
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: 3em;
 }
 
 .big-section {
@@ -164,35 +174,56 @@ hr {
 .project {
   position: relative;
   clear: both;
-  width: 100%;
-  max-height: 300px;
+  min-width: 280px;
+  width: 28%;
+  margin: 3em 5% 0 0;
+  border-radius: 0.25em;
+  min-height: 350px;
+  max-height: 350px;
+  flex-shrink: 0;
+
   overflow: hidden;
-  margin: 3em 0 4em 0;
-  border-top: 1px solid #666;
-  padding-top: 1em;
+  border: 1px solid #666;
+  /* padding-top: 1em; */
   cursor: pointer;
-  transition: all 300ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
-.project::after {
-  content: " ";
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.project .project-thumbnail {
+  display: block;
   width: 100%;
-  height: 100px;
-  background: linear-gradient(0deg, #FFFFFF 0%, #FFFFFF00 100%);
-  pointer-events: none;
+  height: 290px;
+  background-position: center;
+  background-size: cover;
+}
+
+.project .project-title {
+  font-size: 1em;
+  padding: 0.7em 1em;
+}
+
+.project .project-links, .project .project-content {
+  display: none;
+}
+
+.project.open .project-thumbnail {
+  display: none;
 }
 
 .project.open {
   cursor: default;
+  padding: 0;
   padding-top: var(--menu-height);
   max-height: 6000px;
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  margin-bottom: 5em;
+  transition: none;
 }
 
-.project.open::after {
-  background: none;
+.project.open .project-links, .project.open .project-content {
+  display: block;
 }
 
 .project .project-open {
@@ -209,13 +240,14 @@ hr {
   top: calc(var(--menu-height) + 0.2em);
 }
 
-.project .project-title {
+.project.open .project-title {
   position: relative;
   width: 100%;
   font-weight: 400;
   font-size: 2.8em;
   margin-top: 1.0rem;
   margin-bottom: 1.0rem;
+  padding: 0;
 }
 
 .project .project-links {
@@ -381,6 +413,19 @@ span.email {
   #gallery-A, #gallery-B {
     width: 80vw;
     height: 50vh;
+  }
+
+  .project {
+    position: relative;
+    clear: both;
+    min-height: 150px;
+    max-height: 150px;
+    width: 100%;
+    margin: 3em 0 0 0;
+  }
+
+  .project .project-thumbnail {
+    height: 100px;
   }
   
   .full, .half, .third {

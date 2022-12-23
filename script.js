@@ -1,5 +1,7 @@
 let active = -1, x = -1, y = -1;
 let activeGallery = "A";
+const BREAK_WIDTH = 800;
+
 const imgArray = [
   "assets/shape-haptics-1.jpg",
   "assets/sensing-kirigami-1.jpg",
@@ -10,18 +12,6 @@ const imgArray = [
 ];
 
 window.onload = () => {
-  
-  let url = window.location.href;
-  url = url.split("/");
-  if (url.length > 1) {
-    let id = url.at(-1);
-    if (id.charAt(0) === "#") {
-      let proj = document.querySelector(id);
-      if (proj.classList.contains("project")) {
-        open(proj);
-      }
-    }
-  }
   
   setTimeout(() => {
     loadImage();
@@ -53,6 +43,7 @@ window.onload = () => {
   });
 
   document.querySelectorAll(".project").forEach((p) => {
+    p.style.order = 1;
     p.addEventListener("click", (e) => {
       if (!p.classList.contains("open")) {
         open(p);
@@ -70,6 +61,20 @@ window.onload = () => {
       }
     });
   });
+
+  let url = window.location.href;
+  url = url.split("/");
+  if (url.length > 1) {
+    let id = url.at(-1);
+    id = id.split("#");
+    let proj = document.querySelector(`#${id.at(-1)}`);
+    if (proj) {
+        if (proj.classList.contains("project")) {
+        open(proj);
+      }
+    }
+  }
+
 }
 
 const loadImage = () => {
@@ -107,13 +112,24 @@ const loadImage = () => {
 }
 
 const open = (ele) => {
+  if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
   ele.classList.add("open");
+  if (window.innerWidth > BREAK_WIDTH) ele.style.order = -1;
   ele.querySelector(".project-open").innerHTML = "close";
-  ele.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  setTimeout(() => {
+    ele.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }, 150);
   history.pushState("", "", `#${ele.id}`);
 }
 
-const close = (ele) => {
+const close = (ele, open) => {
   ele.classList.remove("open");
-  ele.querySelector(".project-open").innerHTML = "read more";
+  ele.style.order = 1;
+  ele.querySelector(".project-open").innerHTML = "";
+  history.pushState("", "", `#start`);
+  if (!open) {
+    setTimeout(() => {
+      document.querySelector("#projects").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }, 150);
+  }
 }

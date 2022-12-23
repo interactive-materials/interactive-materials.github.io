@@ -1,6 +1,6 @@
 let active = -1, x = -1, y = -1;
 let activeGallery = "A";
-const BREAK_WIDTH = 800;
+const BREAK_WIDTH = 0;
 
 const imgArray = [
   "assets/shape-haptics-1.jpg",

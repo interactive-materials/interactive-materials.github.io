@@ -35,13 +35,13 @@ window.onload = () => {
   document.querySelector("#menu-projects").addEventListener("click", (e) => {
     if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
     // document.querySelector("#projects").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    history.pushState("", "", "#projects");
+    // history.pushState("", "", "#projects");
   });
 
   document.querySelector("#menu-people").addEventListener("click", (e) => {
     if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
     // document.querySelector("#people").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    history.pushState("", "", "#people");
+    // history.pushState("", "", "#people");
   });
 
   document.querySelectorAll(".project").forEach((p) => {

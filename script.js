@@ -76,12 +76,16 @@ const loadUrl = (url) => {
   if (url.length > 1) {
     let id = url.at(-1);
     id = id.split("#");
-    let proj = document.querySelector(`#${id.at(-1)}`);
-    if (proj) {
-        if (proj.classList.contains("project")) {
-        open(proj, true);
+    let ele = document.querySelector(`#${id.at(-1)}`);
+    console.log(id);
+    if (ele) {
+      if (ele.classList.contains("project")) {
+        open(ele, true);
+      } else {
+        if (document.querySelector(".project.open")) close(document.querySelector(".project.open"));
+        ele.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"});
       }
-    }
+    } 
   }
 }
 
@@ -133,7 +137,7 @@ const close = (ele, open) => {
   ele.style.order = 1;
   ele.querySelector(".project-open").innerHTML = "";
   if (!open) {
-    history.pushState("", "", `#start`);
+    history.pushState("", "", `#projects`);
     setTimeout(() => {
       document.querySelector("#projects").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     }, 150);

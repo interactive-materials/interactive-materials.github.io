@@ -132,8 +132,8 @@ const close = (ele, open) => {
   ele.classList.remove("open");
   ele.style.order = 1;
   ele.querySelector(".project-open").innerHTML = "";
-  history.pushState("", "", `#start`);
   if (!open) {
+    history.pushState("", "", `#start`);
     setTimeout(() => {
       document.querySelector("#projects").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     }, 150);

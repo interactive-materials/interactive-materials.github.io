@@ -51,14 +51,13 @@ hr {
 .header {
   position: fixed;
   width: 100vw;
-  height: calc(var(--menu-height) * 0.3);
-  margin: calc(var(--menu-height) * 0.35) 0;
-  padding: 0 var(--side-margin);
+  height: calc(var(--menu-height));
+  padding: calc(var(--menu-height) * 0.2) var(--side-margin);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   z-index: 99;
-  background: none;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAABpJREFUGFdj/P///38GKGAEcRgZGRlBfBQOABnSDAC5vYM4AAAAAElFTkSuQmCC") repeat;
 }
 
 #logo {
@@ -68,8 +67,13 @@ hr {
 
 #logo a {
   text-decoration: none;
-  background: white;
+  /* background: white; */
   padding: 0.2em 0;
+}
+
+#logo a img {
+  height: 1.5em;
+  margin-right: 0.5em;
 }
 
 .menu {
@@ -77,11 +81,12 @@ hr {
 }
 
 .menu a {
-  margin-left: 2em;
+  display: inline-block;
+  margin-left: 1em;
   text-decoration: none;
   font-weight: 600;
-  background: white;
-  padding: 0.2em 0;
+  /* background: white; */
+  padding: 0.3em 0 0 0;
   cursor: pointer;
 }
 
@@ -164,7 +169,8 @@ hr {
   font-weight: 900;
   width: 100%;
   flex-shrink: 0;
-  margin-top: 3em;
+  margin-top: 1em;
+  padding-top: 2em;
 }
 
 .big-section {
@@ -178,21 +184,21 @@ hr {
   width: 28%;
   margin: 3em 5% 0 0;
   border-radius: 0.25em;
-  min-height: 350px;
-  max-height: 350px;
+  min-height: 300px;
+  max-height: 300px;
   flex-shrink: 0;
 
   overflow: hidden;
   border: 1px solid #666;
   /* padding-top: 1em; */
   cursor: pointer;
-  transition: all 200ms ease-in-out;
+  /* transition: all 200ms ease-in-out; */
 }
 
 .project .project-thumbnail {
   display: block;
   width: 100%;
-  height: 290px;
+  height: 240px;
   background-position: center;
   background-size: cover;
 }
@@ -391,6 +397,17 @@ span.email {
 
   .header {
     background: white;
+  }
+
+  #logo a img {
+    position: relative;
+    clear: both;
+    display: inline-block;
+    margin-right: 50vw;
+  }
+
+  .heading {
+    padding-top: 3em;
   }
 
   #start {

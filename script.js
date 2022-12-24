@@ -64,7 +64,14 @@ window.onload = () => {
     });
   });
 
-  let url = window.location.href;
+  loadUrl(window.location.href);
+}
+
+window.addEventListener("popstate", (e) => {
+  loadUrl(window.location.href);
+});
+
+const loadUrl = (url) => {
   url = url.split("/");
   if (url.length > 1) {
     let id = url.at(-1);
@@ -72,11 +79,10 @@ window.onload = () => {
     let proj = document.querySelector(`#${id.at(-1)}`);
     if (proj) {
         if (proj.classList.contains("project")) {
-        open(proj);
+        open(proj, true);
       }
     }
   }
-
 }
 
 const loadImage = () => {
@@ -113,13 +119,13 @@ const loadImage = () => {
   document.querySelector(`#gallery-${activeGallery}`).classList.remove("active");
 }
 
-const open = (ele) => {
+const open = (ele, back) => {
   if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
   ele.classList.add("open");
   if (window.innerWidth > BREAK_WIDTH) ele.style.order = -1;
   ele.querySelector(".project-open").innerHTML = "close";
   ele.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"});
-  history.pushState("", "", `#${ele.id}`);
+  if (!back) history.pushState("", "", `#${ele.id}`);
 }
 
 const close = (ele, open) => {

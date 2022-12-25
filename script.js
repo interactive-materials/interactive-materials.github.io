@@ -127,7 +127,7 @@ const open = (ele, back) => {
   if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
   ele.classList.add("open");
   if (window.innerWidth > BREAK_WIDTH) ele.style.order = -1;
-  ele.querySelector(".project-open").innerHTML = "close";
+  ele.querySelector(".project-open").innerHTML = "close &#x2715;";
   ele.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"});
   if (!back) history.pushState("", "", `#${ele.id}`);
 }

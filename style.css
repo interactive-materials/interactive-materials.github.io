@@ -169,8 +169,8 @@ hr {
   font-weight: 900;
   width: 100%;
   flex-shrink: 0;
-  margin-top: 1em;
-  padding-top: 2em;
+  margin-top: 0em;
+  padding-top: 4em;
 }
 
 .big-section {
@@ -184,8 +184,8 @@ hr {
   width: 28%;
   margin: 3em 5% 0 0;
   border-radius: 0.25em;
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 200px;
+  max-height: 200px;
   flex-shrink: 0;
 
   overflow: hidden;
@@ -198,21 +198,33 @@ hr {
 .project .project-thumbnail {
   display: block;
   width: 100%;
-  height: 240px;
+  height: 120px;
   background-position: center;
   background-size: cover;
+  filter: grayscale(1.0);
+}
+
+.project .project-keywords {
+  display: block;
+  font-family: monospace;
+  font-size: 0.6em;
+  font-weight: 400;
+  padding: 0 15px;
 }
 
 .project .project-title {
-  font-size: 1em;
-  padding: 0.7em 1em;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 1em 15px 0.5em 15px;
 }
 
 .project .project-links, .project .project-content {
   display: none;
 }
 
-.project.open .project-thumbnail {
+.project.open .project-thumbnail, .project.open .project-keywords {
   display: none;
 }
 
@@ -328,13 +340,15 @@ hr {
 
 #people .section span.name {
   font-size: 1.2em;
-  font-weight: 500;
+  font-weight: 600;
   width: 100%;
   display: inline-block;
 }
 
 span.person-title {
   font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.8em; 
   width: 100%;
   display: inline-block;
 }
@@ -351,7 +365,7 @@ span.email {
 }
 
 #people .section .person {
-  margin: 1em 0 1.5em 0;
+  margin: 1em 0 0.5em 0;
 }
 
 #people .section .person span.name {
@@ -442,7 +456,15 @@ span.email {
   }
 
   .project .project-thumbnail {
-    height: 100px;
+    height: 80px;
+  }
+
+  .project .project-title {
+    font-size: 0.9em;
+  }
+
+  .project .project-keywords {
+    font-size: 0.8em;
   }
   
   .full, .half, .third {
@@ -455,7 +477,8 @@ span.email {
     margin-top: 2em;
   }
 
-  #people .section .person span.name {
+  /* #people .section .person span.name {
     width: 100%;
-  }
+    margin-bottom: 0em;
+  } */
 }

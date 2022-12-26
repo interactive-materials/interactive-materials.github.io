@@ -14,7 +14,6 @@ const imgArray = [
 window.onload = () => {
   
   setTimeout(() => {
-    document.querySelector("#logo-img").src = "/assets/logo.svg";
     loadImage();
     setInterval(() => {
       loadImage();

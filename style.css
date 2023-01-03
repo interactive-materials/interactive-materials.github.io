@@ -29,6 +29,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Satoshi-Variable", sans-serif;
   font-size: 20px;
@@ -461,6 +465,10 @@ span.email {
 
   .project .project-title {
     font-size: 0.9em;
+  }
+
+  .project.open .project-title {
+    font-size: 2.0em;
   }
 
   .project .project-keywords {

@@ -137,7 +137,7 @@ hr {
   width: 100%;
   font-size: 2.0em;
   line-height: 1.5em;
-  padding-top: calc(var(--menu-height) * 1.1);
+  padding-top: calc(var(--menu-height) * 1.5);
   min-height: 100vh;
   display: flex;
   align-items: center;

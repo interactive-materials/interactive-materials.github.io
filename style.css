@@ -61,7 +61,7 @@ hr {
   justify-content: space-between;
   align-items: flex-end;
   z-index: 99;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAABpJREFUGFdj/P///38GKGAEcRgZGRlBfBQOABnSDAC5vYM4AAAAAElFTkSuQmCC") repeat;
+  /* background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAABpJREFUGFdj/P///38GKGAEcRgZGRlBfBQOABnSDAC5vYM4AAAAAElFTkSuQmCC") repeat; */
 }
 
 #logo {

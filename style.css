@@ -247,6 +247,7 @@ hr {
   width: 100vw;
   height: 50vh;
   filter: none;
+  transition: none;
 }
 
 .project.open {

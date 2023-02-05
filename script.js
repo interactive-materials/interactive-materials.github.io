@@ -9,6 +9,7 @@ const imgArray = [
   "assets/ppm-1.jpg",
   "assets/mechamagnets-1.jpg",
   "assets/joinery-1.jpg",
+  "assets/ceramics-1.jpg",
 ];
 
 window.onload = () => {

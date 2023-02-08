@@ -570,6 +570,7 @@ span.email {
   .full, .half, .third {
     width: 100%;
     padding-right: 0;
+    padding-top: 2rem;
   }
 
   small {

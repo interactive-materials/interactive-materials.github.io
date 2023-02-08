@@ -365,8 +365,53 @@ hr {
 .project img {
   position: relative;
   width: 100%;
-  min-height: 100px;
+  /* min-height: 100px; */
   background: #222222;
+}
+
+.project .image-gallery {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  flex-flow: row wrap;
+}
+
+.project .image-gallery .item {
+  flex: 0 0 25%;
+  min-width: 110px;
+  box-sizing: border-box;
+  padding: 0 1em 1em 0;
+  cursor: pointer;
+  order: 1;
+  opacity: 0.5;
+  transition: opacity 150ms ease-in-out;
+}
+
+.project .image-gallery .item:hover {
+  opacity: 1.0;
+}
+
+.project .image-gallery .item p {
+  display: none;
+  line-height: 1;
+}
+
+.project .image-gallery .item p small {
+  margin: 0;
+}
+
+.project .image-gallery .item.active {
+  flex: 0 0 100%;
+  padding: 0 0 1em 0;
+  opacity: 1.0;
+  order: 0;
+  cursor: default;
+}
+
+.project .image-gallery .item.active p {
+  display: inline-block;
 }
 
 #people .section {
@@ -529,7 +574,7 @@ span.email {
 
   small {
     display: inline-block;
-    margin-top: 2em;
+    margin-top: 0;
   }
 
   /* #people .section .person span.name {

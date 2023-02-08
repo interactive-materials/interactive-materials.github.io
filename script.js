@@ -65,6 +65,15 @@ window.onload = () => {
     });
   });
 
+  document.querySelectorAll(".image-gallery").forEach((g) => {
+    g.querySelectorAll(".item").forEach((i) => {
+      i.addEventListener("click", (e) => {
+        if (g.querySelector(".item.active")) g.querySelector(".item.active").classList.remove("active");
+        i.classList.add("active");
+      })
+    })
+  });
+
   loadUrl(window.location.href);
 }
 

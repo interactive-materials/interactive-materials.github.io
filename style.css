@@ -338,7 +338,8 @@ hr {
   position: relative;
   float: left;
   width: 100%;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
+  margin-top: 2em;
 }
 
 .project .project-content .block iframe {

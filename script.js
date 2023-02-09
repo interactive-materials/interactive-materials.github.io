@@ -1,6 +1,7 @@
 let active = -1, x = -1, y = -1;
 let activeGallery = "A";
 const BREAK_WIDTH = 0;
+let imageGalleryClicked = false;
 
 const imgArray = [
   "assets/shape-haptics-1.jpg",
@@ -70,8 +71,26 @@ window.onload = () => {
       i.addEventListener("click", (e) => {
         if (g.querySelector(".item.active")) g.querySelector(".item.active").classList.remove("active");
         i.classList.add("active");
-      })
-    })
+        imageGalleryClicked = true;
+      });
+    });
+
+    setInterval(() => {
+      if (!imageGalleryClicked) {
+        let checkActive = -1;
+        g.querySelectorAll(".item").forEach((i, index) => {
+          if (i.classList.contains("active")) {
+            checkActive = index;
+            i.classList.remove("active");
+          }
+        });
+        if (checkActive >= 0) {
+          const itemArray = [...g.querySelectorAll(".item")];
+          itemArray[(checkActive + 1 + itemArray.length) % itemArray.length].classList.add("active");
+        }
+      }
+      imageGalleryClicked = false;
+    }, 6000);
   });
 
   loadUrl(window.location.href);

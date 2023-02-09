@@ -365,7 +365,7 @@ hr {
 .project img {
   position: relative;
   width: 100%;
-  /* min-height: 100px; */
+  min-height: 100px;
   background: #222222;
 }
 
@@ -387,6 +387,10 @@ hr {
   order: 1;
   opacity: 0.5;
   transition: opacity 150ms ease-in-out;
+}
+
+.project .image-gallery .item img {
+  min-height: none;
 }
 
 .project .image-gallery .item:hover {

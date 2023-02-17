@@ -91,6 +91,7 @@ hr {
   margin-left: 1em;
   text-decoration: none;
   font-weight: 600;
+  /* font-size: 0.9em; */
   /* background: white; */
   padding: 0.3em 0 0 0;
   cursor: pointer;
@@ -137,7 +138,7 @@ hr {
   position: relative;
   clear: both;
   width: 100%;
-  font-size: 1.7em;
+  font-size: 1.6em;
   line-height: 1.5em;
   padding-top: calc(var(--menu-height) * 1.0);
   min-height: 100vh;
@@ -150,7 +151,7 @@ hr {
 #start p {
   width: 100%;
   padding: 0 2em;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1em;
 }
 

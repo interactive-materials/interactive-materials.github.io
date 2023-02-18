@@ -1,7 +1,11 @@
 let active = -1, x = -1, y = -1;
-let activeGallery = "A";
+let activeGallery = 1;
 const BREAK_WIDTH = 0;
 let imageGalleryClicked = false;
+let startDiv;
+let startDivHeight = 0;
+let divSizeRatio = 1.2;
+let pHeight = 0;
 
 const imgArray = [
   "assets/shape-haptics-1.jpg",
@@ -19,8 +23,8 @@ window.onload = () => {
     loadImage();
     setInterval(() => {
       loadImage();
-    }, 10000);
-  }, 6000);
+    }, 6000);
+  }, 300);
 
   imgArray.forEach(img => {
     let imgObj = document.createElement("img");
@@ -28,10 +32,29 @@ window.onload = () => {
     }
     imgObj.src = img;
   });
+
+  startDiv = document.querySelector("#start");
+  startDivHeight = startDiv.offsetHeight;
+  pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
+  if (window.innerHeight > 800) {
+    document.addEventListener("scroll", (e) => {
+      let divHeight = startDivHeight + window.scrollY;
+      divHeight = divHeight > startDivHeight * divSizeRatio ? startDivHeight * divSizeRatio : divHeight;
+      startDiv.style.height = `${divHeight}px`;
+
+      const pDeltaTotal = pHeight - startDivHeight;
+      const divDeltaTotal = (startDivHeight * (divSizeRatio - 1));
+      const divDelta = (divHeight - startDivHeight);
+      startDiv.querySelector("p").style.marginTop = `${-divDelta / divDeltaTotal * pDeltaTotal}px`;
+
+      // console.log(pDeltaTotal, divDeltaTotal, divDelta);
+    });
+  }
   
   document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
   window.addEventListener("resize", (e) => {
     document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
+    pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
   });
 
   document.querySelector("#menu-projects").addEventListener("click", (e) => {
@@ -148,7 +171,7 @@ const loadImage = () => {
   gallery.style.left = Math.floor(x * (w - wg)) + "px";
 
   gallery.classList.add("active");
-  activeGallery = activeGallery === "A" ? "B" : "A";
+  activeGallery = activeGallery === 1 ? 2 : 1;
   document.querySelector(`#gallery-${activeGallery}`).classList.remove("active");
 }
 

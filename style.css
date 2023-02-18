@@ -105,7 +105,7 @@ hr {
   height: calc(100vh - var(--menu-height));
 }
 
-#gallery-A, #gallery-B {
+#gallery-1, #gallery-2, #gallery-3 {
   position: absolute;
   width: 50%;
   height: 60%;
@@ -116,7 +116,7 @@ hr {
   transition: opacity 2s ease-in-out;
 }
 
-#gallery-A.active, #gallery-B.active {
+#gallery-1.active, #gallery-2.active, #gallery-3.active {
   opacity: 0.3;
 }
 
@@ -138,21 +138,23 @@ hr {
   position: relative;
   clear: both;
   width: 100%;
-  font-size: 1.6em;
-  line-height: 1.5em;
-  padding-top: calc(var(--menu-height) * 1.0);
-  min-height: 100vh;
-  display: flex;
+  font-size: 2.5em;
+  line-height: 1.4em;
+  padding-top: calc(var(--menu-height) * 2.0);
+  height: 100vh;
+  overflow: hidden;
+  /* display: flex;
   align-items: center;
   align-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 
 #start p {
   width: 100%;
   padding: 0 2em;
-  font-weight: 700;
-  margin-bottom: 1em;
+  font-weight: 500;
+  padding-bottom: 1em;
+  margin: 0;
 }
 
 #projects, #people {
@@ -518,11 +520,17 @@ span.email {
 
   #start {
     font-size: 1.4em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: calc(var(--menu-height));
   }
 
   #start p {
     font-weight: 600;
     padding: 0;
+    margin-bottom: 1em;
   }
 
   #gallery-cover {

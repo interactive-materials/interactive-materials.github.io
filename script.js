@@ -36,7 +36,7 @@ window.onload = () => {
   startDiv = document.querySelector("#start");
   startDivHeight = startDiv.offsetHeight;
   pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
-  if (window.innerHeight > 800) {
+  // if (window.innerHeight > 800) {
     document.addEventListener("scroll", (e) => {
       let divHeight = startDivHeight + window.scrollY;
       divHeight = divHeight > startDivHeight * divSizeRatio ? startDivHeight * divSizeRatio : divHeight;
@@ -49,7 +49,7 @@ window.onload = () => {
 
       // console.log(pDeltaTotal, divDeltaTotal, divDelta);
     });
-  }
+  // }
   
   document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
   window.addEventListener("resize", (e) => {

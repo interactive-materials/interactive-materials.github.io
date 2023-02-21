@@ -524,7 +524,7 @@ span.email {
     /* align-content: center; */
     /* justify-content: center; */
     flex-wrap: wrap;
-    padding-top: calc(var(--menu-height) * 1.5);
+    padding-top: calc(var(--menu-height) * 2.0);
   }
 
   #start p {

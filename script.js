@@ -3,7 +3,7 @@ let activeGallery = 1;
 const BREAK_WIDTH = 0;
 let imageGalleryClicked = false;
 let startDiv;
-let startDivHeight = 0;
+let startDivHeight = window.innerHeight;
 let divSizeRatio = 1.2;
 let pHeight = 0;
 
@@ -17,7 +17,24 @@ const imgArray = [
   "assets/ceramics-1.jpg",
 ];
 
+document.addEventListener("scroll", (e) => {
+  pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
+  let divHeight = startDivHeight + window.scrollY;
+  divHeight = divHeight > startDivHeight * divSizeRatio ? startDivHeight * divSizeRatio : divHeight;
+  startDiv.style.height = `${divHeight + 40}px`;
+
+  const pDeltaTotal = pHeight - startDivHeight;
+  const divDeltaTotal = (startDivHeight * (divSizeRatio - 1));
+  const divDelta = (divHeight - startDivHeight);
+  startDiv.querySelector("p").style.marginTop = `${-divDelta / divDeltaTotal * pDeltaTotal}px`;
+
+  // console.log(pDeltaTotal, divDeltaTotal, divDelta);
+});
+
 window.onload = () => {
+
+  startDiv = document.querySelector("#start");
+  startDivHeight = window.innerHeight;
   
   setTimeout(() => {
     loadImage();
@@ -32,27 +49,10 @@ window.onload = () => {
     }
     imgObj.src = img;
   });
-
-  startDiv = document.querySelector("#start");
-  startDivHeight = startDiv.offsetHeight;
-  pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
-  // if (window.innerHeight > 800) {
-    document.addEventListener("scroll", (e) => {
-      let divHeight = startDivHeight + window.scrollY;
-      divHeight = divHeight > startDivHeight * divSizeRatio ? startDivHeight * divSizeRatio : divHeight;
-      startDiv.style.height = `${divHeight}px`;
-
-      const pDeltaTotal = pHeight - startDivHeight;
-      const divDeltaTotal = (startDivHeight * (divSizeRatio - 1));
-      const divDelta = (divHeight - startDivHeight);
-      startDiv.querySelector("p").style.marginTop = `${-divDelta / divDeltaTotal * pDeltaTotal}px`;
-
-      // console.log(pDeltaTotal, divDeltaTotal, divDelta);
-    });
-  // }
   
   document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
   window.addEventListener("resize", (e) => {
+    startDivHeight = window.innerHeight;
     document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
     pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
   });

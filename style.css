@@ -393,7 +393,7 @@ hr {
 }
 
 .project .image-gallery .item img {
-  min-height: none;
+  min-height: initial;
 }
 
 .project .image-gallery .item:hover {

@@ -16,6 +16,8 @@ const imgArray = [
   "assets/joinery-1.jpg",
   "assets/ceramics-1.jpg",
 ];
+const imgRand = imgArray.map((a, i) => ({random: Math.random(), index: i}));
+imgRand.sort((a, b) => (a.random - b.random));
 
 document.addEventListener("scroll", (e) => {
   pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
@@ -144,11 +146,7 @@ const loadUrl = (url) => {
 const loadImage = () => {
   const gallery = document.querySelector(`#gallery-${activeGallery}`);
 
-  let randomVal = Math.floor(Math.random() * imgArray.length);
-  while(randomVal === active) {
-    randomVal = Math.floor(Math.random() * imgArray.length);
-  }
-  active = randomVal;
+  active = (active + 1) % imgArray.length;
 
   const w = document.querySelector(`#gallery`).offsetWidth;
   const h = document.querySelector(`#gallery`).offsetHeight;
@@ -166,12 +164,13 @@ const loadImage = () => {
   x = l;
   y = t;
 
-  gallery.style.backgroundImage = `url("${imgArray[active]}")`
+  gallery.style.backgroundImage = `url("${imgArray[imgRand[active].index]}")`
   gallery.style.top = Math.floor(y * (h - hg)) + "px";
   gallery.style.left = Math.floor(x * (w - wg)) + "px";
 
   gallery.classList.add("active");
   activeGallery = activeGallery === 1 ? 2 : 1;
+  // activeGallery = activeGallery === 1 ? 2 : activeGallery === 2 ? 3 : 1;
   document.querySelector(`#gallery-${activeGallery}`).classList.remove("active");
 }
 

@@ -91,6 +91,10 @@ window.onload = () => {
     });
   });
 
+  document.querySelectorAll(".project-thumbnail").forEach((t) => {
+    t.style.backgroundImage = `url("${t.dataset.bg}")`;
+  });
+
   document.querySelectorAll(".image-gallery").forEach((g) => {
     g.querySelectorAll(".item").forEach((i) => {
       i.addEventListener("click", (e) => {

@@ -134,14 +134,16 @@ const loadUrl = (url) => {
   if (url.length > 1) {
     let id = url.at(-1);
     id = id.split("#");
-    let ele = document.querySelector(`#${id.at(-1)}`);
-    console.log(id);
-    if (ele) {
-      if (ele.classList.contains("project")) {
-        open(ele, true);
-      } else {
-        if (document.querySelector(".project.open")) close(document.querySelector(".project.open"));
-        ele.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"});
+    if (id.length > 1) {
+      let ele = document.querySelector(`#${id.at(-1)}`);
+      console.log(id);
+      if (ele) {
+        if (ele.classList.contains("project")) {
+          open(ele, true);
+        } else {
+          if (document.querySelector(".project.open")) close(document.querySelector(".project.open"));
+          ele.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"});
+        }
       }
     } 
   }

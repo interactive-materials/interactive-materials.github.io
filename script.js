@@ -19,24 +19,24 @@ const imgArray = [
 const imgRand = imgArray.map((a, i) => ({random: Math.random(), index: i}));
 imgRand.sort((a, b) => (a.random - b.random));
 
-document.addEventListener("scroll", (e) => {
-  pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
-  let divHeight = startDivHeight + window.scrollY;
-  divHeight = divHeight > startDivHeight * divSizeRatio ? startDivHeight * divSizeRatio : divHeight;
-  startDiv.style.height = `${divHeight + 40}px`;
-
-  const pDeltaTotal = pHeight - startDivHeight;
-  const divDeltaTotal = (startDivHeight * (divSizeRatio - 1));
-  const divDelta = (divHeight - startDivHeight);
-  startDiv.querySelector("p").style.marginTop = `${-divDelta / divDeltaTotal * pDeltaTotal}px`;
-
-  // console.log(pDeltaTotal, divDeltaTotal, divDelta);
-});
-
 window.onload = () => {
 
   startDiv = document.querySelector("#start");
   startDivHeight = window.innerHeight;
+
+  document.addEventListener("scroll", (e) => {
+    pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
+    let divHeight = startDivHeight + window.scrollY;
+    divHeight = divHeight > startDivHeight * divSizeRatio ? startDivHeight * divSizeRatio : divHeight;
+    startDiv.style.height = `${divHeight + 40}px`;
+  
+    const pDeltaTotal = pHeight - startDivHeight;
+    const divDeltaTotal = (startDivHeight * (divSizeRatio - 1));
+    const divDelta = (divHeight - startDivHeight);
+    startDiv.querySelector("p").style.marginTop = `${-divDelta / divDeltaTotal * pDeltaTotal}px`;
+  
+    // console.log(pDeltaTotal, divDeltaTotal, divDelta);
+  });
   
   setTimeout(() => {
     loadImage();

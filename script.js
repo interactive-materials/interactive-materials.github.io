@@ -43,7 +43,7 @@ window.onload = () => {
     setInterval(() => {
       loadImage();
     }, 6000);
-  }, 500);
+  }, 3000);
 
   // imgArray.forEach(img => {
   //   let imgObj = document.createElement("img");

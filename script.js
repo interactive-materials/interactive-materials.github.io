@@ -43,14 +43,14 @@ window.onload = () => {
     setInterval(() => {
       loadImage();
     }, 6000);
-  }, 300);
+  }, 500);
 
-  imgArray.forEach(img => {
-    let imgObj = document.createElement("img");
-    imgObj.onload = () => {
-    }
-    imgObj.src = img;
-  });
+  // imgArray.forEach(img => {
+  //   let imgObj = document.createElement("img");
+  //   imgObj.onload = () => {
+  //   }
+  //   imgObj.src = img;
+  // });
   
   document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
   window.addEventListener("resize", (e) => {

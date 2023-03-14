@@ -37,13 +37,6 @@ window.onload = () => {
   
     // console.log(pDeltaTotal, divDeltaTotal, divDelta);
   });
-  
-  setTimeout(() => {
-    loadImage();
-    setInterval(() => {
-      loadImage();
-    }, 6000);
-  }, 3000);
 
   // imgArray.forEach(img => {
   //   let imgObj = document.createElement("img");
@@ -123,6 +116,13 @@ window.onload = () => {
   });
 
   loadUrl(window.location.href);
+
+  setTimeout(() => {
+    loadImage();
+    setInterval(() => {
+      loadImage();
+    }, 6000);
+  }, 3000);
 }
 
 window.addEventListener("popstate", (e) => {

@@ -123,6 +123,9 @@ window.onload = () => {
       loadImage();
     }, 6000);
   }, 3000);
+
+  document.querySelector("#loading-projects").classList.add("hide");
+  document.querySelectorAll(".project").forEach((p) => {p.classList.add("loaded")});
 }
 
 window.addEventListener("popstate", (e) => {

@@ -187,6 +187,60 @@ hr {
   border-top: 1px solid black;
 }
 
+#loading-projects {
+  position: relative;
+  padding: 3em 0;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 0.05em;
+}
+
+#loading-projects.hide {
+  display: none;
+}
+
+#loading-projects span {
+  padding: 0 0.1em;
+}
+
+#loading-projects span#dot-1 {
+  animation: dot1 1500ms;
+  animation-iteration-count: infinite;
+}
+
+#loading-projects span#dot-2 {
+  animation: dot2 1500ms;
+  animation-iteration-count: infinite;
+}
+
+#loading-projects span#dot-3 {
+  animation: dot3 1500ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dot1 {
+  0%    { opacity: 1.0 }
+  20%   { opacity: 0.0 }
+  40%   { opacity: 1.0 }
+  100%  { opacity: 1.0 }
+}
+
+@keyframes dot2 {
+  0%    { opacity: 1.0 }
+  10%   { opacity: 1.0 }
+  30%   { opacity: 0.0 }
+  50%   { opacity: 1.0 }
+  100%  { opacity: 1.0 }
+}
+
+@keyframes dot3 {
+  0%    { opacity: 1.0 }
+  20%   { opacity: 1.0 }
+  40%   { opacity: 0.0 }
+  60%   { opacity: 1.0 }
+  100%  { opacity: 1.0 }
+}
+
 .project {
   position: relative;
   clear: both;
@@ -202,6 +256,11 @@ hr {
   /* padding-top: 1em; */
   cursor: pointer;
   /* transition: all 200ms ease-in-out; */
+  display: none;
+}
+
+.project.loaded {
+  display: block;
 }
 
 .project .project-thumbnail {

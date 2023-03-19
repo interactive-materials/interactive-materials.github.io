@@ -97,22 +97,22 @@ window.onload = () => {
       });
     });
 
-    setInterval(() => {
-      if (!imageGalleryClicked) {
-        let checkActive = -1;
-        g.querySelectorAll(".item").forEach((i, index) => {
-          if (i.classList.contains("active")) {
-            checkActive = index;
-            i.classList.remove("active");
-          }
-        });
-        if (checkActive >= 0) {
-          const itemArray = [...g.querySelectorAll(".item")];
-          itemArray[(checkActive + 1 + itemArray.length) % itemArray.length].classList.add("active");
-        }
-      }
-      imageGalleryClicked = false;
-    }, 6000);
+    // setInterval(() => {
+    //   if (!imageGalleryClicked) {
+    //     let checkActive = -1;
+    //     g.querySelectorAll(".item").forEach((i, index) => {
+    //       if (i.classList.contains("active")) {
+    //         checkActive = index;
+    //         i.classList.remove("active");
+    //       }
+    //     });
+    //     if (checkActive >= 0) {
+    //       const itemArray = [...g.querySelectorAll(".item")];
+    //       itemArray[(checkActive + 1 + itemArray.length) % itemArray.length].classList.add("active");
+    //     }
+    //   }
+    //   imageGalleryClicked = false;
+    // }, 6000);
   });
 
   loadUrl(window.location.href);

@@ -19,7 +19,11 @@ const imgArray = [
 const imgRand = imgArray.map((a, i) => ({random: Math.random(), index: i}));
 imgRand.sort((a, b) => (a.random - b.random));
 
+
+let timeCheck = 0;
 window.onload = () => {
+
+  timeCheck = Date.now();
 
   startDiv = document.querySelector("#start");
   startDivHeight = window.innerHeight;
@@ -115,7 +119,13 @@ window.onload = () => {
     }, 6000);
   });
 
+  console.log(2, Date.now() - timeCheck);
+  timeCheck = Date.now();
+
   loadUrl(window.location.href);
+
+  console.log(3, Date.now() - timeCheck);
+  timeCheck = Date.now();
 
   setTimeout(() => {
     loadImage();
@@ -123,6 +133,9 @@ window.onload = () => {
       loadImage();
     }, 6000);
   }, 3000);
+
+  console.log(4, Date.now() - timeCheck);
+  timeCheck = Date.now();
 
   document.querySelector("#loading-projects").classList.add("hide");
   document.querySelectorAll(".project").forEach((p) => {p.classList.add("loaded")});

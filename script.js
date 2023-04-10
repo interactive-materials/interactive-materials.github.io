@@ -68,7 +68,7 @@ window.onload = () => {
     p.style.order = 1;
     p.addEventListener("click", (e) => {
       if (!p.classList.contains("open")) {
-        open(p);
+        open(p, false, true);
       }
       e.stopPropagation();
     });
@@ -79,7 +79,7 @@ window.onload = () => {
       if (p.classList.contains("open")) {
         close(p);
       } else {
-        open(p);
+        open(p, false);
       }
     });
   });
@@ -115,7 +115,7 @@ window.onload = () => {
     // }, 6000);
   });
 
-  loadUrl(window.location.href);
+  loadUrl(window.location.href, false);
 
   setTimeout(() => {
     loadImage();
@@ -129,10 +129,10 @@ window.onload = () => {
 }
 
 window.addEventListener("popstate", (e) => {
-  loadUrl(window.location.href);
+  loadUrl(window.location.href, true);
 });
 
-const loadUrl = (url) => {
+const loadUrl = (url, back) => {
   url = url.split("/");
   if (url.length > 1) {
     let id = url.at(-1);
@@ -142,7 +142,7 @@ const loadUrl = (url) => {
       console.log(id);
       if (ele) {
         if (ele.classList.contains("project")) {
-          open(ele, true);
+          open(ele, back);
         } else {
           if (document.querySelector(".project.open")) close(document.querySelector(".project.open"));
           ele.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"});
@@ -183,12 +183,16 @@ const loadImage = () => {
   document.querySelector(`#gallery-${activeGallery}`).classList.remove("active");
 }
 
-const open = (ele, back) => {
+const open = (ele, back, instant) => {
   if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
   ele.classList.add("open");
   if (window.innerWidth > BREAK_WIDTH) ele.style.order = -1;
   ele.querySelector(".project-open").innerHTML = "close &#x2715;";
-  setTimeout(() => {ele.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"});}, 200);
+  if (instant) {
+    ele.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"});
+  } else {
+    setTimeout(() => {ele.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"});}, 150);
+  }
   if (!back) history.pushState("", "", `#${ele.id}`);
 }
 

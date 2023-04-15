@@ -180,7 +180,8 @@ hr {
   width: 100%;
   flex-shrink: 0;
   margin-top: 0em;
-  padding-top: 4em;
+  padding-top: 8rem;
+  padding-bottom: 3rem;
 }
 
 .big-section {
@@ -270,7 +271,7 @@ hr {
   background-position: center;
   background-size: cover;
   /* border-radius: 0.4rem; */
-  filter: grayscale(0.8) brightness(0.9);
+  filter: grayscale(1.0) brightness(1.1);
   transition: all 150ms ease-in-out;
 }
 

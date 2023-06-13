@@ -68,13 +68,15 @@ hr {
 
 #logo {
   position: relative;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 #logo a {
   text-decoration: none;
   /* background: white; */
   padding: 0.2em 0;
+  letter-spacing: 0.02em;
+  /* text-transform: uppercase; */
 }
 
 #logo a img {

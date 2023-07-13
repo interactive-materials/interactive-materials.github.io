@@ -77,7 +77,7 @@ hr {
 
 #logo {
   position: relative;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 #logo a {
@@ -150,7 +150,7 @@ hr {
   position: relative;
   clear: both;
   width: 100%;
-  font-size: 3.5em;
+  font-size: 3.3em;
   line-height: 1.4em;
   padding-top: calc(var(--menu-height) * 2.0);
   height: 100vh;
@@ -164,7 +164,7 @@ hr {
 #start p {
   width: 100%;
   padding: 0 2em;
-  font-weight: 600;
+  font-weight: 500;
   padding-bottom: 1em;
   margin: 0;
 }
@@ -189,7 +189,7 @@ hr {
   font-family: "Lora-variable", "Switzer-Variable", sans-serif;
   text-transform: capitalize;
   font-size: 2.0em;
-  font-weight: 900;
+  font-weight: 200;
   width: 100%;
   flex-shrink: 0;
   margin-top: 0em;
@@ -304,7 +304,7 @@ hr {
   font-family: "Lora-variable", "Switzer-Variable", sans-serif;
   font-size: 1em;
   /* text-transform: uppercase; */
-  font-weight: 900;
+  font-weight: 500;
   /* letter-spacing: 0.05em; */
   padding: 0.6em 0.4rem 0.4em 0.4rem;
 }

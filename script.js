@@ -13,7 +13,6 @@ const imgArray = [
   "assets/sensing-kirigami-2.jpg",
   "assets/ppm-1.jpg",
   "assets/mechamagnets-1.jpg",
-  "assets/joinery-1.jpg",
   "assets/ceramics-1.jpg",
 ];
 const imgRand = imgArray.map((a, i) => ({random: Math.random(), index: i}));
@@ -24,19 +23,19 @@ window.onload = () => {
   startDiv = document.querySelector("#start");
   startDivHeight = window.innerHeight;
 
-  document.addEventListener("scroll", (e) => {
-    pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
-    let divHeight = startDivHeight + window.scrollY;
-    divHeight = divHeight > startDivHeight * divSizeRatio ? startDivHeight * divSizeRatio : divHeight;
-    startDiv.style.height = `${divHeight + 40}px`;
+  // document.addEventListener("scroll", (e) => {
+  //   pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
+  //   let divHeight = startDivHeight + window.scrollY;
+  //   divHeight = divHeight > startDivHeight * divSizeRatio ? startDivHeight * divSizeRatio : divHeight;
+  //   startDiv.style.height = `${divHeight + 40}px`;
   
-    const pDeltaTotal = pHeight - startDivHeight;
-    const divDeltaTotal = (startDivHeight * (divSizeRatio - 1));
-    const divDelta = (divHeight - startDivHeight);
-    startDiv.querySelector("p").style.marginTop = `${-divDelta / divDeltaTotal * pDeltaTotal}px`;
+  //   const pDeltaTotal = pHeight - startDivHeight;
+  //   const divDeltaTotal = (startDivHeight * (divSizeRatio - 1));
+  //   const divDelta = (divHeight - startDivHeight);
+  //   startDiv.querySelector("p").style.marginTop = `${-divDelta / divDeltaTotal * pDeltaTotal}px`;
   
-    // console.log(pDeltaTotal, divDeltaTotal, divDelta);
-  });
+  //   // console.log(pDeltaTotal, divDeltaTotal, divDelta);
+  // });
 
   // imgArray.forEach(img => {
   //   let imgObj = document.createElement("img");
@@ -45,12 +44,12 @@ window.onload = () => {
   //   imgObj.src = img;
   // });
   
-  document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
-  window.addEventListener("resize", (e) => {
-    startDivHeight = window.innerHeight;
-    document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
-    pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
-  });
+  // document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
+  // window.addEventListener("resize", (e) => {
+  //   startDivHeight = window.innerHeight;
+  //   document.querySelector("#gallery").style.height = document.querySelector("#start").offsetHeight + "px";
+  //   pHeight = [...startDiv.querySelectorAll("p")].map(p => p.offsetHeight).reduce((a, b) => (a + b));
+  // });
 
   document.querySelector("#menu-projects").addEventListener("click", (e) => {
     if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
@@ -117,12 +116,17 @@ window.onload = () => {
 
   loadUrl(window.location.href, false);
 
-  setTimeout(() => {
-    loadImage();
-    setInterval(() => {
-      loadImage();
-    }, 6000);
-  }, 3000);
+  // setTimeout(() => {
+  //   loadImage();
+  //   setInterval(() => {
+  //     loadImage();
+  //   }, 6000);
+  // }, 3000);
+
+  document.querySelector("#start-bg").style.backgroundImage = `url(${imgArray[Math.floor(Math.random() * imgArray.length)]})`;
+  setInterval(() => {
+    document.querySelector("#start-bg").style.backgroundImage = `url(${imgArray[Math.floor(Math.random() * imgArray.length)]})`;
+  }, 30000);
 
   document.querySelector("#loading-projects").classList.add("hide");
   document.querySelectorAll(".project").forEach((p) => {p.classList.add("loaded")});
@@ -184,6 +188,7 @@ const loadImage = () => {
 }
 
 const open = (ele, back, instant) => {
+  document.querySelector("#start").classList.add("hide");
   if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
   ele.classList.add("open");
   if (window.innerWidth > BREAK_WIDTH) ele.style.order = -1;
@@ -200,6 +205,7 @@ const close = (ele, open) => {
   ele.classList.remove("open");
   ele.style.order = 1;
   ele.querySelector(".project-open").innerHTML = "";
+  document.querySelector("#start").classList.remove("hide");
   if (!open) {
     history.pushState("", "", `#projects`);
     setTimeout(() => {

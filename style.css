@@ -51,7 +51,6 @@ body {
   font-size: 15px;
   font-weight: 500;
   color: black;
-  background: white;
   overflow-x: hidden;
   background: #FAFAFA;
 }
@@ -335,6 +334,10 @@ hr {
   background: white;
 }
 
+.project.open:hover {
+  background: none;
+}
+
 .project:hover .project-thumbnail {
   filter: grayscale(0.0) brightness(1.0);
 }
@@ -385,7 +388,7 @@ hr {
   height: 40vh;
   filter: none;
   transition: none;
-  background-image: linear-gradient(0deg, #FCFCFC, 60%, rgba(255, 255, 255, 0.0));
+  background-image: linear-gradient(0deg, #FAFAFA, 60%, rgba(255, 255, 255, 0.0));
 }
 
 .project.open {
@@ -625,6 +628,8 @@ span.email {
 @media only screen and (max-width: 1000px) {
   body {
     font-size: 15px;
+    width: 100vw;
+    overflow-x: hidden;
   }
 
   .header {

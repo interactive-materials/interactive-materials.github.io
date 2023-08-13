@@ -707,6 +707,7 @@ span.email {
     margin-left: 10vw;
     padding-left: 0;
     padding-right: 0;
+    overflow-x: hidden;
   }
 
   #gallery-1, #gallery-2, #gallery-3 {

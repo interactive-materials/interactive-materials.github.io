@@ -106,9 +106,6 @@ window.onload = () => {
   // }, 3000);
 
   document.querySelector("#start-bg").style.backgroundImage = `url(${imgArray[Math.floor(Math.random() * imgArray.length)]})`;
-  setInterval(() => {
-    document.querySelector("#start-bg").style.backgroundImage = `url(${imgArray[Math.floor(Math.random() * imgArray.length)]})`;
-  }, 30000);
 
   document.querySelector("#loading-projects").classList.add("hide");
   document.querySelectorAll(".project").forEach((p) => {p.classList.add("loaded")});

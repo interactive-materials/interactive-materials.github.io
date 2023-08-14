@@ -172,7 +172,7 @@ hr {
   /* font-family: "Lora-variable", "Switzer-Variable", sans-serif; */
   position: relative;
   clear: both;
-  width: 100%;
+  width: calc(100% - var(--side-width));
   margin-left: var(--side-width);
   font-size: 2.2em;
   line-height: 1.4em;
@@ -801,6 +801,7 @@ footer {
 
   #start {
     margin-left: 0;
+    width: 90vw;
   }
 
   #people, #projects {

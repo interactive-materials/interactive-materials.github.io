@@ -78,6 +78,7 @@ hr {
   z-index: 99;
   font-size: 1.0rem;
   border-right: 1px solid var(--border-color);
+  user-select: none;
   /* background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAABpJREFUGFdj/P///38GKGAEcRgZGRlBfBQOABnSDAC5vYM4AAAAAElFTkSuQmCC") repeat; */
   /* background: white; */
 }
@@ -121,6 +122,7 @@ hr {
   /* font-size: 0.9em; */
   /* background: white; */
   cursor: pointer;
+  user-select: none;
 }
 
 #gallery {

@@ -32,7 +32,6 @@
   --border-color: #666;
   --side-margin: 5vw;
   --menu-height: 80px;
-  --content-width: min(90vw, 1200px);
 }
 
 * {
@@ -47,6 +46,7 @@ html {
 
 body {
   /* font-family: "Satoshi-Variable", sans-serif; */
+  width: 100vw;
   font-family: "Switzer-Variable", sans-serif;
   font-size: 15px;
   font-weight: 500;
@@ -155,11 +155,14 @@ hr {
 
 .content {
   position: absolute;
+  top: 0;
+  left: 0;
   /* width: var(--content-width); */
-  width: calc(100vw - var(--side-width));
+  /* width: calc(99vw - var(--side-width)); */
+  width: 100vw;
   /* margin: 0 calc(50vw - var(--content-width) * 0.5); */
   margin: 0;
-  margin-left: var(--side-width);
+  /* margin-left: var(--side-width); */
   /* padding: 0 50px 15em 50px; */
 }
 
@@ -168,6 +171,7 @@ hr {
   position: relative;
   clear: both;
   width: 100%;
+  margin-left: var(--side-width);
   font-size: 2.2em;
   line-height: 1.4em;
   padding-top: 2.0rem;
@@ -196,8 +200,7 @@ hr {
 }
 
 #start.hide {
-  height: 0;
-  overflow: hidden;
+  display: none;
 }
 
 #start p {
@@ -212,6 +215,7 @@ hr {
   position: relative;
   clear: both;
   width: 100%;
+  padding-left: var(--side-width);
   /* margin-top: calc(var(--menu-height)); */
   /* padding: 2em 0; */
 }
@@ -791,5 +795,14 @@ footer {
 
   #people .section {
     font-size: 14px;
+  }
+
+  #start {
+    margin-left: 0;
+  }
+
+  #people, #projects {
+    width: 100%;
+    padding-left: 0;
   }
 }

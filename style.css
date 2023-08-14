@@ -168,7 +168,7 @@ hr {
   position: relative;
   clear: both;
   width: 100%;
-  font-size: 2.5em;
+  font-size: 2.2em;
   line-height: 1.4em;
   padding-top: 2.0rem;
   padding-left: var(--side-padding);
@@ -201,7 +201,7 @@ hr {
 
 #start p {
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   font-weight: 500;
   padding-bottom: 1em;
   margin: 0;
@@ -548,10 +548,16 @@ hr {
 
 #people .section {
   position: relative;
+  width: 100%;
   min-height: 5em;
   margin-top: 4em;
   padding-left: var(--side-padding);
   font-size: 18px;
+}
+
+#people .section.people-type {
+  position: relative;
+  float: left;
 }
 
 #people .section span {
@@ -560,9 +566,11 @@ hr {
 }
 
 #people .section span.name {
+  position: relative;
+  float: left;
   font-size: 1.2em;
   font-weight: 600;
-  width: 100%;
+  /* width: 100%; */
   display: inline-block;
 }
 
@@ -575,30 +583,41 @@ span.person-title {
 }
 
 span.email, span.web {
+  position: relative;
+  float: left;
+  clear: both;
   font-size: 0.8em;
   margin-right: 1em;
   white-space: nowrap;
 }
 
 span.email {
+  /* display: none; */
   user-select: all;
   cursor: pointer;
 }
 
 #people .section .person {
-  margin: 1em 0 0.5em 0;
-}
-
-#people .section .person span.name {
-  width: 20%;
-  min-width: 150px;
+  position: relative;
+  float: left;
+  display: block;
+  width: 45%;
+  margin: 1.5em 0 0.5em 0;
 }
 
 .person a {
+  position: relative;
   text-decoration: none;
+  position: relative;
+  float: left;
 }
 
 #people a span::after {
+  position: relative;
+  font-size: 0.8em;
+  padding: 0;
+  margin-left: 0.2em;
+  width: 0;
   content: " \2199";
   font-weight: 100;
 }
@@ -623,6 +642,13 @@ span.email {
   float: left;
   width: 33.3%;
   padding-right: 1em;
+}
+
+footer {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 20rem;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -684,7 +710,7 @@ span.email {
   }
 
   #start {
-    font-size: 1.2em;
+    font-size: 1.4em;
     padding-right: 1em;
     /* display: flex; */
     /* align-content: center; */

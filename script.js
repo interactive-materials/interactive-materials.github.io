@@ -69,32 +69,15 @@ window.onload = () => {
     t.style.backgroundImage = `url("${t.dataset.bg}")`;
   });
 
-  document.querySelectorAll(".image-gallery").forEach((g) => {
-    g.querySelectorAll(".item").forEach((i) => {
-      i.addEventListener("click", (e) => {
-        if (g.querySelector(".item.active")) g.querySelector(".item.active").classList.remove("active");
-        i.classList.add("active");
-        imageGalleryClicked = true;
-      });
-    });
-
-    // setInterval(() => {
-    //   if (!imageGalleryClicked) {
-    //     let checkActive = -1;
-    //     g.querySelectorAll(".item").forEach((i, index) => {
-    //       if (i.classList.contains("active")) {
-    //         checkActive = index;
-    //         i.classList.remove("active");
-    //       }
-    //     });
-    //     if (checkActive >= 0) {
-    //       const itemArray = [...g.querySelectorAll(".item")];
-    //       itemArray[(checkActive + 1 + itemArray.length) % itemArray.length].classList.add("active");
-    //     }
-    //   }
-    //   imageGalleryClicked = false;
-    // }, 6000);
-  });
+  // document.querySelectorAll(".image-gallery").forEach((g) => {
+  //   g.querySelectorAll(".item").forEach((i) => {
+  //     i.addEventListener("click", (e) => {
+  //       if (g.querySelector(".item.active")) g.querySelector(".item.active").classList.remove("active");
+  //       i.classList.add("active");
+  //       imageGalleryClicked = true;
+  //     });
+  //   });
+  // });
 
   loadUrl(window.location.href, false);
 
@@ -170,6 +153,18 @@ const open = (ele, back, instant) => {
   document.querySelector("#start").classList.add("hide");
   if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
   ele.classList.add("open");
+  if (!ele.classList.contains("loaded")) {
+    ele.querySelectorAll(".image-gallery").forEach((g) => {
+      g.querySelectorAll(".item").forEach((i) => {
+        i.addEventListener("click", (e) => {
+          if (g.querySelector(".item.active")) g.querySelector(".item.active").classList.remove("active");
+          i.classList.add("active");
+          imageGalleryClicked = true;
+        });
+      });
+    });
+    ele.classList.add("loaded");
+  }
   if (window.innerWidth > BREAK_WIDTH) ele.style.order = -1;
   ele.querySelector(".project-open").innerHTML = "close &#x2715;";
   // if (instant) {

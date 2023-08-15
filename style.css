@@ -110,6 +110,10 @@ hr {
   width: 100%;
 }
 
+.menu.hidden {
+  display: none;
+}
+
 .menu a {
   position: relative;
   float: right;

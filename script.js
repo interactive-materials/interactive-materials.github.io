@@ -91,6 +91,7 @@ window.onload = () => {
   document.querySelector("#start-bg").style.backgroundImage = `url(${imgArray[Math.floor(Math.random() * imgArray.length)]})`;
 
   document.querySelector("#loading-projects").classList.add("hide");
+  document.querySelector(".menu").classList.remove("hidden");
   document.querySelectorAll(".project").forEach((p) => {p.classList.add("loaded")});
 }
 

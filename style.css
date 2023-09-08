@@ -27,9 +27,9 @@
 }
 
 :root {
-  --side-width: 25vw;
+  --side-width: min(25vw, 150px);
   --side-padding: 25px;
-  --border-color: #666;
+  --border-color: #CCC;
   --side-margin: 5vw;
   --menu-height: 80px;
 }
@@ -128,6 +128,56 @@ hr {
   cursor: pointer;
   user-select: none;
 }
+
+/* start new header */
+
+.header {
+  /* transform-origin: 0 0; */
+  transform: translate(calc(-50vh + 0.5 * var(--side-width)), 50vh) rotate(90deg);
+  width: 100vh;
+  height: var(--side-width);
+  top: calc(-0.5 * var(--side-width));
+  padding: 0;
+  padding-left: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  border: none;
+  border-top: 1px solid var(--border-color);
+}
+
+#logo {
+  width: 300px;
+  height: 1em;
+  position: relative;
+}
+
+#logo a {
+  float: left;
+  padding: 0;
+}
+
+#logo a img {
+  height: 1rem;
+}
+
+.menu {
+  position: relative;
+  float: left;
+  width: 50%;
+  padding: 0;
+}
+
+.menu a {
+  width: 25%;
+  clear: none;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* end header */
 
 #gallery {
   position: absolute;

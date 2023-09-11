@@ -45,6 +45,10 @@ window.onload = () => {
     // history.pushState("", "", "#people");
   });
 
+  document.querySelector("#arrow").addEventListener("click", (e) => {
+    document.querySelector("#projects").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  });
+
   document.querySelectorAll(".project").forEach((p) => {
     p.style.order = 1;
     p.addEventListener("click", (e) => {
@@ -80,13 +84,6 @@ window.onload = () => {
   });
 
   loadUrl(window.location.href, false);
-
-  // setTimeout(() => {
-  //   loadImage();
-  //   setInterval(() => {
-  //     loadImage();
-  //   }, 6000);
-  // }, 3000);
 
   document.querySelector("#start-bg").style.backgroundImage = `url(${imgArray[Math.floor(Math.random() * imgArray.length)]})`;
 

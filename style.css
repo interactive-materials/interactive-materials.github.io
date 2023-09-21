@@ -279,6 +279,13 @@ hr {
   font-weight: 600;
 }
 
+#start h3 {
+  font-size: 0.8rem;
+  letter-spacing: 0.02rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
 #start #about-us, #start #contact-us {
   position: relative;
   float: left;

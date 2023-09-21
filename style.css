@@ -28,7 +28,7 @@
 
 :root {
   --side-width: min(25vw, 150px);
-  --side-padding: min(25px, 5vw);
+  --side-padding: min(15px, 3vw);
   --border-color: #CCC;
   --side-margin: 5vw;
   --menu-height: 80px;
@@ -274,9 +274,11 @@ hr {
 }
 
 #start #blurb p {
-  font-size: 3em;
+  font-family: "Gloock", serif;
+  font-size: 3.5em;
   line-height: 1.1em;
-  font-weight: 600;
+  /* letter-spacing: 0.05rem; */
+  font-weight: 400;
 }
 
 #start h3 {
@@ -344,6 +346,7 @@ hr {
 
 .heading {
   /* font-family: "Lora-variable", "Switzer-Variable", sans-serif; */
+  font-family: "Gloock", serif;
   text-transform: capitalize;
   font-size: 1.5em;
   font-weight: 400;
@@ -353,7 +356,7 @@ hr {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   border-top: 1px solid var(--border-color);
-  padding-left: var(--side-padding)
+  padding-left: var(--side-padding);
 }
 
 .big-section {
@@ -463,16 +466,17 @@ hr {
   /* font-family: monospace; */
   font-size: 0.8em;
   font-weight: 300;
-  padding: 0 0.6rem;
+  padding: 0 var(--side-padding);
 }
 
 .project .project-title {
   /* font-family: "Lora-variable", "Switzer-Variable", sans-serif; */
+  font-family: "Gloock", serif;
   font-size: 1.2em;
   /* text-transform: uppercase; */
-  font-weight: 500;
+  font-weight: 400;
   /* letter-spacing: 0.05em; */
-  padding: 0.6em 0.4rem 0.2em 0.6rem;
+  padding: 0.6em 0.4rem 0.2em var(--side-padding);
 }
 
 .project .project-links, .project .project-content {
@@ -544,6 +548,7 @@ hr {
 }
 
 .project.open .project-title {
+  /* font-family: "Lora-variable", "Switzer-Variable", sans-serif; */
   position: relative;
   width: 100%;
   font-weight: 600;

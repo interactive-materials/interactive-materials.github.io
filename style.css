@@ -245,7 +245,7 @@ hr {
   background-position: center;
   z-index: -1;
   opacity: 0.1;
-  filter: brightness(1.3) blur(5px) grayscale(1.0);
+  filter: brightness(1.1) blur(5px) grayscale(0.9);
 }
 
 #start.hide {
@@ -306,12 +306,25 @@ hr {
 #start #news {
   position: relative;
   float: left;
-  width: calc(100% + 2 * var(--side-padding));
+  width: calc(100% + var(--side-padding));
   padding: 1em;
   margin-left: calc(-1 * var(--side-padding));
-  background: #EAEAEA;
+  background: none;
   color: black;
   margin-top: 2em;
+}
+
+#start #news:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FF4444;
+  mix-blend-mode: color-burn;
+  z-index: -1;
+  opacity: 0.3;
 }
 
 #start #news h3 {
@@ -888,6 +901,10 @@ footer {
     padding: 0;
     padding-bottom: 1em;
     padding-right: 1rem;
+  }
+
+  #start #news {
+    width: calc(100% + 1em + var(--side-padding));
   }
 
   #start #news ul li {

@@ -890,6 +890,12 @@ footer {
     padding-right: 1rem;
   }
 
+  #start #news ul li {
+    font-size: 0.75em;
+    margin-bottom: 1em;
+    padding-right: 1em;
+  }
+
   #arrow {
     display: none;
   }

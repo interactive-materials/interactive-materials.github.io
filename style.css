@@ -303,6 +303,38 @@ hr {
   line-height: 1.4em;
 }
 
+#start #news {
+  position: relative;
+  float: left;
+  width: calc(100% + 2 * var(--side-padding));
+  padding: 1em;
+  margin-left: calc(-1 * var(--side-padding));
+  background: #EAEAEA;
+  color: black;
+  margin-top: 2em;
+}
+
+#start #news h3 {
+  font-weight: 600;
+}
+
+#start #news ul {
+  position: relative;
+  float: left;
+  display: block;
+  margin-bottom: 1em;
+}
+
+#start #news ul li {
+  position: relative;
+  display: block;
+  list-style: none;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
 #start #arrow {
   position: relative;
   float: left;

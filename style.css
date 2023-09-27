@@ -308,6 +308,7 @@ hr {
   float: left;
   width: calc(100% + var(--side-padding));
   padding: 1em;
+  padding-bottom: 2em;
   margin-left: calc(-1 * var(--side-padding));
   background: none;
   color: black;

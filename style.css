@@ -315,6 +315,13 @@ hr {
   margin-top: 2em;
 }
 
+@keyframes news-anim {
+  0%   { opacity: 0.3; }
+  33%  { opacity: 0.5; }
+  66%  { opacity: 0.2; }
+  100% { opacity: 0.3; }
+}
+
 #start #news:after {
   content: " ";
   position: absolute;
@@ -326,6 +333,7 @@ hr {
   mix-blend-mode: color-burn;
   z-index: -1;
   opacity: 0.3;
+  animation: news-anim 5s infinite;
 }
 
 #start #news h3 {

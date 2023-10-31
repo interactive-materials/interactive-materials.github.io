@@ -22,8 +22,9 @@ document.addEventListener("scroll", (e) => {
   if (document.querySelector("#start-bg")) {
     var div = document.querySelector("#start-bg");
     var h = window.innerHeight;
-    div.style.top = `-${window.scrollY * 2.5}px`;
-    div.style.opacity = `${(1 - window.scrollY / h * 2)}`;
+    var w = window.innerWidth;
+    div.style.top = `-${window.scrollY * (w < 800 ? 1.1 : 2.5)}px`;
+    div.style.opacity = `${(1 - window.scrollY / h * (w < 800 ? 1.1 : 2))}`;
   }
 });
 
@@ -175,7 +176,9 @@ const open = (ele, back, instant) => {
   // } else {
   //   setTimeout(() => {ele.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"});}, 150);
   // }
-  window.scrollTo({top:0, left: 0, behavior:"instant"});
+  setTimeout( () => {
+    window.scrollTo({top:0, left: 0, behavior:"instant"});
+  }, 50);
   if (!back) history.pushState("", "", `#${ele.id}`);
 }
 

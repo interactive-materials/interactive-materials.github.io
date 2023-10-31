@@ -742,6 +742,10 @@ footer {
     font-size: 0.9rem !important;
   }
 
+  #start {
+    margin-top: 70vh;
+  }
+
   #start #blurb p {
     font-size: 40px;
   }

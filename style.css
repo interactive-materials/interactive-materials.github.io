@@ -727,6 +727,10 @@ footer {
     overflow-x: hidden;
   }
 
+  .header {
+    padding-left: var(--side-padding);
+  }
+
   .menu {
     width: 100vw;
   }

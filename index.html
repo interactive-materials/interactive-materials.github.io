@@ -28,6 +28,33 @@
       <div id="logo">
         <a href=""><img id="logo-img" src="assets/logo.svg">Interactive Materials Lab</a>
       </div>
+      <div class="menu-btn hide">
+        <svg id="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+          <defs>
+            <style>
+              .cls-line {
+                fill: none;
+                stroke: #000;
+                stroke-miterlimit: 10;
+                stroke-width: 4px;
+                transition: all 100ms ease-in-out;
+              }
+
+              .close .cls-x1 {
+                transform-origin: 50% 25%;
+                transform: translate(0, 12.5px) rotate(45deg);
+              }
+
+              .close .cls-x2 {
+                transform-origin: 50% 75%;
+                transform: translate(0, -12.5px) rotate(-45deg);
+              }
+            </style>
+          </defs>
+            <line class="cls-line cls-x1" y1="12.5" x2="50" y2="12.5"/>
+            <line class="cls-line cls-x2" y1="37.5" x2="50" y2="37.5"/>
+        </svg>
+      </div>
       <div class="menu hidden">
         <a id="menu-projects">Projects</a>
         <a id="menu-people">People</a>
@@ -41,10 +68,15 @@
       <div id="gallery-cover"></div>
     </div> -->
 
+    <div id="start-bg">
+      <div id="arrow">
+        <svg viewBox="0 0 80.85 100.5"><polyline points="40.5 0 40.5 100 .5 60 40.5 100 80.5 60"/></svg>
+      </div>
+    </div>
+
     <div class="content">
       
       <div id="start">
-        <div id="start-bg"></div>
         <div id="blurb">
           <p>
             Designerly experiments around tangible interfaces and interactive materials
@@ -80,12 +112,8 @@
           <h3>News</h3>
           <ul>
             <li>2023.09.26&mdash;Ceramic Circuits is on display at the <a href="https://sdwstaging.designsingapore.org/events/playground-of-possibilities/">Playground of Possibilities</a> till 31 Dec 2023 as part of Singapore Design Week 2023.</li>
-            <li>2023.09.25&mdash;Ceramic Circuits clinched the Grand Prize at the He Chao Zong Cup, International Ceramics Industry Award 第七届"何朝宗杯"陶瓷工业设计大赛</li>
+            <li>2023.09.25&mdash;Ceramic Circuits clinched the Grand Prize at the He Chao Zong Cup, Ceramics Industry Award 第七届"何朝宗杯"陶瓷工业设计大赛</li>
           </ul>
-        </div>
-
-        <div id="arrow">
-          <svg viewBox="0 0 80.85 100.5"><polyline points="40.5 0 40.5 100 .5 60 40.5 100 80.5 60"/></svg>
         </div>
       </div>
 

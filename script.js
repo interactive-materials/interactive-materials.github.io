@@ -18,6 +18,15 @@ const imgArray = [
 const imgRand = imgArray.map((a, i) => ({random: Math.random(), index: i}));
 imgRand.sort((a, b) => (a.random - b.random));
 
+document.addEventListener("scroll", (e) => {
+  if (document.querySelector("#start-bg")) {
+    var div = document.querySelector("#start-bg");
+    var h = window.innerHeight;
+    div.style.top = `-${window.scrollY * 2.5}px`;
+    div.style.opacity = `${(1 - window.scrollY / h * 2)}`;
+  }
+});
+
 window.onload = () => {
 
   startDiv = document.querySelector("#start");
@@ -27,7 +36,10 @@ window.onload = () => {
     e.stopImmediatePropagation();
     if (document.querySelector(".open")) close(document.querySelector(".open"), true);
     document.querySelector("#start").classList.remove("hide");
+    document.querySelector("#start-bg").classList.remove("hide");
     document.querySelector("#projects").scrollIntoView(true);
+    document.querySelector(".menu").classList.toggle("hidden");
+    document.querySelector(".menu-btn").classList.toggle("close");
     // setTimeout(() => {
     //   window.scrollTo(0, document.querySelector("#projects").getBoundingClientRect().y);
     // }, 50);
@@ -38,15 +50,14 @@ window.onload = () => {
     e.stopImmediatePropagation();
     if (document.querySelector(".open")) close(document.querySelector(".open"), true);
     document.querySelector("#start").classList.remove("hide");
+    document.querySelector("#start-bg").classList.remove("hide");
     document.querySelector("#people").scrollIntoView(true);
+    document.querySelector(".menu").classList.toggle("hidden");
+    document.querySelector(".menu-btn").classList.toggle("close");
     // setTimeout(() => {
     //   window.scrollTo(0, document.querySelector("#people").getBoundingClientRect().y);
     // }, 50);
     // history.pushState("", "", "#people");
-  });
-
-  document.querySelector("#arrow").addEventListener("click", (e) => {
-    document.querySelector("#projects").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
   });
 
   document.querySelectorAll(".project").forEach((p) => {
@@ -69,6 +80,11 @@ window.onload = () => {
     });
   });
 
+  document.querySelector(".menu-btn").addEventListener("click", (e) => {
+    document.querySelector(".menu").classList.toggle("hidden");
+    document.querySelector(".menu-btn").classList.toggle("close");
+  });
+
   document.querySelectorAll(".project-thumbnail").forEach((t) => {
     t.style.backgroundImage = `url("${t.dataset.bg}")`;
   });
@@ -88,7 +104,7 @@ window.onload = () => {
   document.querySelector("#start-bg").style.backgroundImage = `url(${imgArray[Math.floor(Math.random() * imgArray.length)]})`;
 
   document.querySelector("#loading-projects").classList.add("hide");
-  document.querySelector(".menu").classList.remove("hidden");
+  document.querySelector(".menu-btn").classList.remove("hide");
   document.querySelectorAll(".project").forEach((p) => {p.classList.add("loaded")});
 }
 
@@ -149,6 +165,7 @@ const loadImage = () => {
 
 const open = (ele, back, instant) => {
   document.querySelector("#start").classList.add("hide");
+  document.querySelector("#start-bg").classList.add("hide");
   if (document.querySelector(".open")) close(document.querySelector(".open"), true); 
   ele.classList.add("open");
   if (window.innerWidth > BREAK_WIDTH) ele.style.order = -1;

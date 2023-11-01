@@ -149,6 +149,7 @@ hr {
   width: 100vw;
   height: 100vh;
   background-color: #E0EAFA;
+  background-image: url(assets/ceramics-1.jpg);
   background-size: cover;
   background-position: center;
   z-index: 99;

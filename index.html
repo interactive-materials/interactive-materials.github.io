@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Materials Lab</title>
+    <meta name="title" content="Interactive Materials Lab" />
+    <meta name="description" content="Interactive Materials Lab at the National University of Singapore. We research material systems to support interaction and experience design. Led by Clement Zheng." />
+    <meta
+      name="author"
+      content="NUS Division of Industrial Design, Clement Zheng"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="Interactive Materials Lab" />
+    <meta property="og:description" content="Interactive Materials Lab at the National University of Singapore. We research material systems to support interaction and experience design. Led by Clement Zheng." />
+    <meta property="og:image" content="/assets/preview.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> -->
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/assets/favicon/favicon-32x32.png">
+  </head>
+  <body>
+    <div class="header">
+      <div id="logo">
+        <a href=""><img id="logo-img" src="assets/logo.svg">Interactive Materials Lab</a>
+      </div>
+      <div class="menu-btn hide">
+        <svg id="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+          <defs>
+            <style>
+              .cls-line {
+                fill: none;
+                stroke: #000;
+                stroke-miterlimit: 10;
+                stroke-width: 4px;
+                transition: all 100ms ease-in-out;
+              }
+
+              .close .cls-x1 {
+                transform-origin: 50% 25%;
+                transform: translate(0, 12.5px) rotate(45deg);
+              }
+
+              .close .cls-x2 {
+                transform-origin: 50% 75%;
+                transform: translate(0, -12.5px) rotate(-45deg);
+              }
+            </style>
+          </defs>
+            <line class="cls-line cls-x1" y1="12.5" x2="50" y2="12.5"/>
+            <line class="cls-line cls-x2" y1="37.5" x2="50" y2="37.5"/>
+        </svg>
+      </div>
+      <div class="menu hidden">
+        <a id="menu-projects">Projects</a>
+        <a id="menu-people">People</a>
+      </div>
+    </div>
+
+    <!-- <div id="gallery">
+      <div id="gallery-1" class=""></div>
+      <div id="gallery-2" class=""></div>
+      <div id="gallery-3" class=""></div>
+      <div id="gallery-cover"></div>
+    </div> -->
+
+    <div id="start-bg">
+      <div id="arrow">
+        <svg viewBox="0 0 80.85 100.5"><polyline points="40.5 0 40.5 100 .5 60 40.5 100 80.5 60"/></svg>
+      </div>
+    </div>
+
+    <div class="content">
+      
+      <div id="start">
+        <div id="blurb">
+          <p>
+            Designerly experiments around tangible interfaces and interactive materials
+          </p>
+        </div>
+
+        <div id="about-us">
+          <h3>About</h3>
+          <p>
+            At the Interactive Materials Lab, we research material systems to support interaction and experience design.
+            Our practice is characterized by blending designerly exploration, technical experiments, and rigorous making.
+            We are interested in uncovering new ways of blending physical media with tangible computing, along with probing the interactive materiality that such systems facilitate.
+          </p>
+          <p>
+            We focus on the space between materials and artifacts for our research, and specialize in building interactive systems by leveraging everyday materials and fabrication processes. 
+            Our research findings often come in the form of new approaches and tools for constructing tangible interfaces.
+          </p>
+        </div>
+
+        <div id="contact-us">
+          <h3>
+            Contact Us
+          </h3>
+          <p>
+            The Interactive Materials Lab is housed within the Division of Industrial Design at the National University of Singapore.     
+          </p>
+          <p>
+            Reach out by dropping us an email at <br><a href="mailto:clement.zheng@nus.edu.sg">clement.zheng@nus.edu.sg</a>
+          </p>
+        </div>
+
+        <div id="news">
+          <h3>News</h3>
+          <ul>
+            <li>2023.09.26&mdash;Ceramic Circuits is on display at the <a href="https://sdwstaging.designsingapore.org/events/playground-of-possibilities/">Playground of Possibilities</a> till 31 Dec 2023 as part of Singapore Design Week 2023.</li>
+            <li>2023.09.25&mdash;Ceramic Circuits clinched the Grand Prize at the He Chao Zong Cup, Ceramics Industry Award 第七届"何朝宗杯"陶瓷工业设计大赛</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="projects">
+        <div class="heading" style="order: 0;">Projects</div>
+
+        <div id="loading-projects">loading projects<span id="dot-1">.</span><span id="dot-2">.</span><span id="dot-3">.</span></div>
+ 
+<!--         CERAMICS -->
+        <div class="project" id="ceramic-circuits">
+          <div class="project-open"></div>
+          <div class="project-thumbnail" data-bg="assets/ceramics-thumb.jpg"></div>
+          <div class="project-title">Ceramic Circuits</div>
+          <div class="project-keywords">CHI 2023, Crafting Circuits on Ceramics</div>
+          <div class="project-links">
+            <a target="_blank" href="https://doi.org/10.1145/3544548.3580836">CHI 2023</a>
+            <a target="_blank" href="https://files.cargocollective.com/c45711/Zheng_Ceramics.pdf">Paper</a>
+            <!-- <a target="_blank" href="https://www.dezeen.com/2023/03/15/clement-zheng-conductive-ceramics-control-sound-sense-moisture/">Dezeen</a> -->
+          </div>
+          <div class="project-content">
+            <div class="block">
+              <p>
+                <small>Press coverage: 
+                  <a target="_blank" href="https://www.dezeen.com/2023/03/15/clement-zheng-conductive-ceramics-control-sound-sense-moisture/">Dezeen</a>, 
+                  <a target="_blank" href="https://www.theguardian.com/lifeandstyle/2023/mar/28/design-news-plates-that-talk-to-your-table-mats-milan-salone-and-inspiring-kids-to-build">The Guardian</a>,
+                  <a target="_blank" href="https://www.scmp.com/lifestyle/arts-culture/article/3217688/magic-multifunctional-design-new-ikea-furniture-collection-pushes-limits-small-spaces-seats">SCMP</a>,
+                  <a target="_blank" href="https://cde.nus.edu.sg/news-detail/ceramic-circuits-wins-grand-prize-in-china-design-competition/">CDE News</a>
+                </small>
+              </p>
+              <p>
+                Glazed ceramic is a versatile material that we use every day. For a long time, humans have harnessed its many qualities to create both practical and decorative objects at various scales. This includes everything from dining and kitchenware to home and architectural fixtures. Rather than develop new electronic devices, what if we could use these everyday ceramic objects as computational interfaces?
+              </p>
+              <p>
+                This research presents a new approach for integrating interactive circuits into glazed ceramic ware. By selectively carving traces on the surface of glazed ceramic objects and filling them with conductive ink, we transformed everyday objects into interfaces and smart devices that can participate in daily activities. Our approach was developed in collaboration with Hans Tan, a designer who works with sandblasting to transform heritage porcelain objects in Singapore into contemporary art pieces. We built upon his technique to incorporate functional electronic circuits into existing ceramic objects.
+              </p>
+              <p>
+                Our approach has enabled us to create a range of interactive artifacts that are based on common ceramic object archetypes. These include touch-sensing tableware, temperature-sensing tiles, and moisture-sensing planters. Additionally, we have applied heating elements directly onto dining vessels to keep food warm or even cook it.
+              </p>
+            </div>
+
+            <div class="block">
+              <div class="full">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/Zgh6FBNQg-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="third">
+                <img loading="lazy" src="assets/ceramics-2.jpg">
+              </div>
+              <div class="third">
+                <img loading="lazy" src="assets/ceramics-5.jpg">
+              </div>
+              <div class="third">
+                <img loading="lazy" src="assets/ceramics-6.jpg">
+              </div>
+              <div class="full">
+                <p>
+                  <small>Approach: Ceramic object is masked and sandblasted. Conductive ink is applied manually into the recessed traces, and excess ink is scraped off.</small>
+                </p>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="half">
+                <img loading="lazy" src="assets/ceramics-4.jpg">
+              </div>
+              <div class="half">
+                <img loading="lazy" src="assets/ceramics-3.jpg">
+              </div>
+              <div class="full">
+                <p><small>Detail: cross section of sandblasted trace. Scraping off excess ink from a tile.</small></p>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="image-gallery">
+                <div class="item active">
+                  <img loading="lazy" src="assets/ceramics-9.jpg">
+                  <p><small>Example Application: Moisture sensing planter</small></p>
+                </div>
+                <div class="item">
+                  <img loading="lazy" src="assets/ceramics-11.jpg">
+                  <p><small>Example Application: Salad bowl with touch slider</small></p>
+                </div>
+                <div class="item">
+                  <img loading="lazy" src="assets/ceramics-8.jpg">
+                  <p><small>Example Application: Temperature sensing tile</small></p>
+                </div>
+                <div class="item">
+                  <img loading="lazy" src="assets/ceramics-10.jpg">
+                  <p><small>Example Application: Moisture sensing tile</small></p>
+                </div>
+                <div class="item">
+                  <img loading="lazy" src="assets/ceramics-17.jpg">
+                  <p><small>Example Application: Plate with integrated heating element</small></p>
+                </div>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+
+<!--         BEHOLDER -->
+        <div class="project" id="project-beholder">
+          <div class="project-open"></div>
+          <div class="project-thumbnail" data-bg="assets/beholder-thumb.png"></div>
+          <div class="project-title">Project Beholder</div>
+          <div class="project-keywords">CV-based physical computing toolkit</div>
+          <div class="project-links">
+            <a target="_blank" href="https://doi.org/10.1145/3544548.3580643">CHI 2023</a>
+            <a target="_blank" href="https://doi.org/10.1145/3550471.3564764">SA Emerging Tech 2022</a>
+            <a target="_blank" href="https://github.com/project-beholder/">GitHub</a>
+          </div>
+          <div class="project-content">
+            <div class="block">
+              <p>
+                The electronics-centered approach to physical computing presents challenges when designers build tangible interactive systems due to its inherent emphasis on circuitry and electronic components. To explore an alternative physical computing approach we developed Beholder&mdash;a computer vision (CV) based system that uses a webcam, computer, and printed fiducial markers to create functional tangible interfaces.
+              </p>
+              <p>
+                We built a visual editor to facilitate this CV-driven approach to physical computing. This editor supports people to connect different parameters of these markers (such as presence, position, and rotation) to keyboard input. This enables CV-driven interfaces to control any software that takes keyboard as an input.
+              </p>
+            </div>
+
+            <div class="block">
+              <div class="full">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/ElwNJPvnOfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--         SHAPE HAPTICS -->
+        <div class="project" id="shape-haptics">
+          <div class="project-open"></div>
+          <div class="project-thumbnail" data-bg="assets/shape-haptics-thumb.jpg"></div>
+          <div class="project-title">Shape Haptics</div>
+          <div class="project-keywords">CHI 2022, 2D Haptic Mechanisms</div>
+          <div class="project-links">
+            <a target="_blank" href="https://doi.org/10.1145/3491102.3501829">CHI 2022</a>
+            <a target="_blank" href="https://files.cargocollective.com/c45711/Zheng_Shape-Haptics.pdf">Paper</a>
+            <a target="_blank" href="https://interactive-materials.github.io/shape-haptics">Shape Haptics Sandbox</a>
+          </div>
+          <div class="project-content">
+            <div class="block">
+              <p>
+                Shape Haptics is a new approach for designers to rapidly design and fabricate passive force feedback mechanisms for physical interfaces.
+              </p>
+              <p>
+                Passive (unpowered) haptic mechanisms are found in objects and devices all around us—and they are challenging to design. Shape Haptics abstracts and broadens the expression of this class of haptic mechanisms.
+              </p>
+              <p>
+                Shape Haptics mechanisms consist of 2D laser cut parts fabricated from POM plastic. They comprise a compliant spring structure that engages with a sliding profile during interaction. By shaping the sliding profile, designers can easily customize the haptic force feedback delivered by the mechanism. 
+              </p>
+              <p>
+                We demonstrate how Shape Haptics can be applied to a variety of applications, including changing the haptics of existing objects and interfaces, as well as building new interactive systems. We also developed a sandbox for others to explore and fabricate their own Shape Haptics mechanisms.
+              </p>
+            </div>
+            
+            <div class="block">
+              <div class="full">
+                <p>
+                  <small>Shape Haptics sliders: the different edge profiles result in different force displacement curves.</small>
+                </p>
+              </div>
+              <div class="third">
+                <img loading="lazy" src="assets/shapehaptics-gif1.gif">
+              </div>
+              <div class="third">
+                <img loading="lazy" src="assets/shapehaptics-gif2.gif">
+              </div>
+              <div class="third">
+                <img loading="lazy" src="assets/shapehaptics-gif3.gif">
+              </div>
+            </div>
+            
+            <div class="block">
+              <div class="full">
+                <p>
+                  <small>Shape Haptics applications: modifying the haptics of everyday objects and interfaces, or constructing new devices.</small>
+                </p>
+              </div>
+              <div class="third">
+                <img loading="lazy" src="assets/shapehaptics-app1.jpg">
+              </div>
+              <div class="third">
+                <img loading="lazy" src="assets/shapehaptics-app2.jpg">
+              </div>
+              <div class="third">
+                <img loading="lazy" src="assets/shapehaptics-app3.jpg">
+              </div>
+            </div>
+            
+            <div class="block">
+              <div class="half">
+                <p>
+                  <small>The Shape Haptics sandbox enables designers to author different haptic profiles. The sandbox then generates all the necessary fabrication drawings for laser cutting.</small>
+                </p>
+              </div>
+              <div class="half">
+                <img loading="lazy" src="assets/shapehaptics-interface.gif">
+              </div>
+            </div>
+            
+            <div class="block">
+              <div class="full">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/xuam2Sg7QSE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--         PRINTED PAPER MARKERS -->
+        <div class="project" id="printed-paper-markers">
+          <div class="project-open"></div>
+          <div class="project-thumbnail" data-bg="assets/ppm-thumb.jpg"></div>
+          <div class="project-title">Printed Paper Markers</div>
+          <div class="project-keywords">DIS 2020, Papercraft + Computer Vision</div>
+          <div class="project-links">
+            <a target="_blank" href="https://doi.org/10.1145/3357236.3395578">DIS 2020 (honorable mention)</a>
+            <a target="_blank" href="https://files.cargocollective.com/c45711/Zheng_Printed-Paper-Markers.pdf">Paper</a>
+          </div>
+          <div class="project-content">
+            <div class="block">
+              <p>
+                This work explores two seemingly disparate affordances that paper offers for tangible interactions: 
+                paper as a printing medium for computer vision markers; and paper as a medium for creating pliable 3D objects. 
+                From this investigation, we uncovered a variety of tangible interactions that can be detected through different paper structures that construct and deconstruct computer vision markers. 
+                These paper structures are easy and economical to fabricate. Furthermore, many interactions can be sensed via a single camera.
+              </p>
+            </div>
+            
+            <div class="block">
+              <div class="full">
+                <p>
+                  <small>Combining papercraft with computer vision to detect a button press.</small>
+                </p>
+              </div>
+              <div class="half">
+                <img loading="lazy" src="assets/ppm_pushbutton.gif">
+              </div>
+            </div>
+            
+            <div class="block">
+              <div class="full">
+                <p>
+                  <small>Combining papercraft with computer vision to detect stretching.</small>
+                </p>
+              </div>
+              <div class="half">
+                <img loading="lazy" src="assets/PPM_stretch1.jpg">
+              </div>
+              <div class="half">
+                <img loading="lazy" src="assets/PPM_stretch2.jpg">
+              </div>
+            </div>
+            
+            <div class="block">
+              <div class="full">
+                <p>
+                  <small>Paper interfaces built with Printed Paper Markers.</small>
+                </p>
+              </div>
+              <div class="full">
+                <img loading="lazy" src="assets/ppm-1.jpg">
+              </div>
+            </div>
+            
+            <div class="block">
+              <div class="full">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/0FSGYHUUrao" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+<!--         SENSING KIRIGAMI -->
+        <div class="project" id="sensing-kirigami">
+          <div class="project-open"></div>
+          <div class="project-thumbnail" data-bg="assets/sensing-kirigami-thumb.jpg"></div>
+          <div class="project-title">Sensing Kirigami</div>
+          <div class="project-keywords">DIS 2019, Papercraft Sensors</div>
+          <div class="project-links">
+            <a target="_blank" href="https://doi.org/10.1145/3322276.3323689">DIS 2019 (best pictorial)</a>
+            <a target="_blank" href="https://files.cargocollective.com/c45711/Zheng_Sensing-Kirigami.pdf">Paper</a>
+          </div>
+          <div class="project-content">
+            <div class="block">
+              <p>
+                Paper is a modest material with rich affordances for craft and design. 
+                It can be shaped into delicate objects that move with the slightest touch; 
+                or constructed into robust structures that support a building.
+                We were attracted to the qualities of paper for facilitating tangible interactions and were particularly curious about kirigami (切り紙): 
+                a Japanese term we borrow to describe cutting, folding and bending flat sheets of paper into three-dimensional forms. 
+                Kirigami enables us to shape paper into pliable structures that move dynamically to afford tangible interactions. 
+              </p>
+              <p>
+                We investigated the properties of carbon-coated paper, an electrically resistive material.
+                This material is affected by folding and bending—two essential building blocks of kirigami objects. 
+                From this investigation, we developed a range of paper objects that facilitate tangible interaction.
+              </p>
+            </div>
+            
+            <div class="block">
+              <div class="full">
+                <p>
+                  <small>Laser cutting is used to etch electrical traces onto the material. The final pattern is then cut and assembled into a three dimensional structure.</small>
+                </p>
+              </div>
+              <div class="half">
+                <img loading="lazy" src="assets/sensingkirigami-fab1.gif">
+              </div>
+              <div class="half">
+                <img loading="lazy" src="assets/sensingkirigami-fab2.jpg">
+              </div>
+            </div>
+            
+            <div class="block">
+              <div class="full">
+                <p>
+                  <small>Sample applications: interactive paper push-buttons, interactive paper lampshade.</small>
+                </p>
+              </div>
+              <div class="half">
+                <img loading="lazy" src="assets/sensingkirigami-app1.jpg">
+              </div>
+              <div class="half">
+                <img loading="lazy" src="assets/sensingkirigami-lamp.gif">
+              </div>
+            </div>
+            
+            <div class="block">
+              <div class="full">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/MLHus2M85nk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--         MECHAMAGNETS -->
+        <div class="project" id="mechamagnets">
+          <div class="project-open"></div>
+          <div class="project-thumbnail" data-bg="assets/mechamagnets-thumb.jpg"></div>
+          <div class="project-title">Mechamagnets</div>
+          <div class="project-keywords">TEI 2019, Haptic Magnet Configurations</div>
+          <div class="project-links">
+            <a target="_blank" href="https://doi.org/10.1145/3294109.3295622">TEI 2019</a>
+            <a target="_blank" href="https://files.cargocollective.com/c45711/Zheng_Mechamagnets.pdf">Paper</a>
+          </div>
+          <div class="project-content">
+            <div class="block">
+              <p>
+                Mechamagnets is an approach for rapidly prototyping haptic and functional physical interfaces through desktop 3D printing and embedded static magnets.
+              </p>
+              <p>
+                Through Mechamagnets, designers have an efficient means of detailing the physical form, function and haptics of physical interfaces. 
+                This is achieved with 3D printed parts with embedded magnets that move in a various degrees of freedom. 
+                The configuration of magnets enable different passive haptic responses. 
+                These same magnets also participate in the instrumentation of the physical interface with the help of linear Hall effect sensors.
+              </p>
+            </div>
+
+            <div class="block">
+              <div class="full">
+                <p>
+                  <small>Tactile feedback with embedded magnets + Instrumentation with Hall effect sensors</small>
+                </p>
+              </div>
+              <div class="half">
+                <img loading="lazy" src="assets/mechamagnets-hall.gif">
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="half">
+                <p>
+                  <small>Assembling example inputs</small>
+                </p>
+
+                <iframe loading="lazy" src="https://www.youtube.com/embed/b-SRypIDoSo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+
+              <div class="half">
+                <p>
+                  <small>Mechamagnets design and fabrication</small>
+                </p>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/qEJtV08-l4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="third">
+                <p>
+                  <small>Blending Physical Inputs</small>
+                </p>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/Pi6i3wXTlW8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+
+              <div class="third">
+                <p>
+                  <small>Tangible Input Device</small>
+                </p>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/FlrZkvMFk84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+
+              <div class="third">
+                <p>
+                  <small>Embedding Haptic Movements</small>
+                </p>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/fgYyC-LZGBE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+<!--         JOINERY -->
+        <div class="project" id="joinery">
+          <div class="project-open"></div>
+          <div class="project-thumbnail" data-bg="assets/joinery-thumb.jpg"></div>
+          <div class="project-title">Joinery</div>
+          <div class="project-keywords">C&C 2017, Parametric Laser Cutting</div>
+          <div class="project-links">
+            <a target="_blank" href="https://doi.org/10.1145/3059454.3059459">C&C 2017</a>
+            <a target="_blank" href="https://files.cargocollective.com/c45711/Zheng_Joinery.pdf">Paper</a>
+            <a target="_blank" href="https://clementzheng.github.io/joinery/">Tool</a>
+            <a target="_blank" href="http://www.instructables.com/id/Joinery-Joints-for-Laser-Cut-Assemblies/">Instructable</a>
+          </div>
+          <div class="project-content">
+            <div class="block">
+              <div class="full">
+                <p>
+                  Laser cutting is widely used as a rapid modeling tool. 
+                  However, designing and fabricating laser cut assemblies can be a complex and tedious process, especially for novice designers. 
+                  Joints between different parts of an assembly are a critical feature to translate a digital model into a physical model through laser cutting.
+                </p>
+                <p>
+                  Joinery was developed to facilitate this rapid modeling process as a parametric joint generation toolkit for laser cut assemblies. 
+                  Through Joinery, designers simply define connections between parts of an assembly, while the system generates the joints. 
+                  Joinery supports fabrication-aware design through six different joint profiles. 
+                  These joint profiles were developed through extensive research and experiments with different materials and product types, and each profile caters to different design needs.
+                </p>
+              </div>
+            </div>
+
+            <div class="block">
+              <div class="third">
+                <p>
+                  <small>
+                    Flap joint
+                  </small>
+                </p>
+                <img loading="lazy" src="assets/joinery1.jpg">
+              </div>
+              <div class="third">
+                <p>
+                  <small>
+                    Finger joint
+                  </small>
+                </p>
+                <img loading="lazy" src="assets/joinery2.jpg">
+              </div>
+              <div class="third">
+                <p>
+                  <small>
+                    Hem joint
+                  </small>
+                </p>
+                <img loading="lazy" src="assets/joinery3.jpg">
+              </div>
+            </div>
+            
+            <div class="block">
+              <div class="third">
+                <p>
+                  <small>
+                    Loop Insert joint
+                  </small>
+                </p>
+                <img loading="lazy" src="assets/joinery4.jpg">
+              </div>
+              <div class="third">
+                <p>
+                  <small>
+                    Interlocking joint
+                  </small>
+                </p>
+                <img loading="lazy" src="assets/joinery5.jpg">
+              </div>
+              <div class="third">
+                <p>
+                  <small>
+                    Tab Insert joint
+                  </small>
+                </p>
+                <img loading="lazy" src="assets/joinery6.jpg">
+              </div>
+            </div>
+          </div>
+        </div> 
+
+
+
+      <!-- 
+        <div class="project" id="id">
+          <div class="project-open">read more</div>
+          <div class="project-title">Title</div>
+          <div class="project-links">
+            <a target="_blank" href="">Link</a>
+          </div>
+          <div class="project-content">
+            
+          </div>
+        </div> 
+      -->
+
+      </div>
+
+      <!-- <hr> -->
+
+      <div id="people">
+        <div class="heading">People</div>
+        
+        <div class="section">
+          <a target="_blank" href="https://clementzheng.info">
+            <span class="name">Clement Zheng <small>PhD</small></span>
+          </a>
+          <span class="person-title">Principal Investigator</span>
+          <span class="email">clement.zheng@nus.edu.sg</span>
+        </div>
+
+        <div class="section">
+          <span class="name">Yong Zhen Zhou</span>
+          <span class="person-title">Researcher</span>
+          <span class="email">zhenzhou@nus.edu.sg</span>
+        </div>
+
+        <div class="section people-type">
+          <span class="person-title">Graduate Student Researchers</span>
+          
+          <div class="person">
+            <a target="_blank" href="https://www.instagram.com/hanbo_95/">
+              <span class="name">Han Bo</span>
+            </a>
+            <span class="email">bo.han@u.nus.edu</span>
+          </div>
+
+          <div class="person">
+            <span class="name">Liu Xin</span>
+            <span class="email">liuxin@u.nus.edu</span>
+          </div>
+
+          <div class="person">
+            <a target="_blank" href="https://yeqian.art">
+              <span class="name">Ye Qian</span>
+            </a>
+            <span class="email">yeqian@u.nus.edu</span>
+          </div>
+
+          <div class="person">
+            <a target="_blank" href="https://yurihuang.com/">
+              <span class="name">Huang Yuqi</span>
+            </a>
+            <span class="email">yuqi.huang@u.nus.edu</span>
+          </div>
+        </div>
+
+        <div class="section people-type">
+          <span class="person-title">Undergraduate Student Researchers</span>
+
+          <div class="person">
+            <a target="_blank" href="https://lukegoh.myportfolio.com/work">
+              <span class="name">Luke Goh</span>
+            </a>
+            <!-- <span class="email">lukegoh98@gmail.com</span> -->
+          </div>
+
+          <div class="person">
+            <a target="_blank" href="http://wnshta.webflow.io/">
+              <span class="name">Wina Nashita</span>
+            </a>
+            <!-- <span class="email">wnshta.social@gmail.com</span> -->
+          </div>
+
+          <div class="person">
+            <a target="_blank" href="https://serenetan.myportfolio.com/">
+              <span class="name">Serene Tan</span>
+            </a>
+            <!-- <span class="email">serenetannn@gmail.com</span> -->
+          </div>
+
+          <div class="person">
+            <span class="name">Travis Ong</span>
+            <!-- <span class="email">ojhtravis@gmail.com</span> -->
+          </div>
+        </div>
+
+        <div class="section people-type">
+          <span class="person-title">Lab Alumni</span>
+
+          <div class="person">
+            <a target="_blank" href="https://www.behance.net/vivientanzq">
+              <span class="name">Vivien Tan</span>
+            </a>
+            <!-- <span class="email">vivientanzq@gmail.com</span> -->
+          </div>
+
+          <div class="person">
+            <a target="_blank" href="https://www.linkedin.com/in/prasanthkk">
+              <span class="name">Pras</span>
+            </a>
+            <!-- <span class="email">prasanthkumaar@gmail.com</span> -->
+          </div>
+
+          <div class="person">
+            <a target="_blank" href="https://yuanjie.info/">
+              <span class="name">Choo Yuan Jie</span>
+            </a>
+            <!-- <span class="email">deceiveyoureyes@gmail.com</span> -->
+          </div>
+
+        </div>
+      
+      </div>
+
+      <footer></footer>
+
+    </div>
+  </body>
+</html>

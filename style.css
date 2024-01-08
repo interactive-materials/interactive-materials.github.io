@@ -70,7 +70,7 @@ hr {
 
 #logo {
   display: block;
-  height: 2em;
+  height: 1.5em;
   width: 100%;
   font-weight: 600;
 }
@@ -82,8 +82,8 @@ hr {
 }
 
 #logo a img {
-  height: 1.5em;
-  margin-right: 0.5em;
+  height: 1.4em;
+  margin-right: 0.2em;
 }
 
 .menu-btn {

@@ -7,6 +7,8 @@ let startDivHeight = window.innerHeight;
 let divSizeRatio = 1.2;
 let pHeight = 0;
 
+let bgW, bgH;
+
 const imgArray = [
   "assets/shape-haptics-1.jpg",
   "assets/sensing-kirigami-1.jpg",
@@ -102,7 +104,15 @@ window.onload = () => {
 
   loadUrl(window.location.href, false);
 
-  document.querySelector("#start-bg").style.backgroundImage = `url(${imgArray[Math.floor(Math.random() * imgArray.length)]})`;
+  var url = imgArray[Math.floor(Math.random() * imgArray.length)];
+  document.querySelector("#start-bg").style.backgroundImage = `url(${url})`;
+
+  var image = new Image();
+  image.src = url;
+  image.onload = function () {
+    bgW = image.width;
+    bgH = image.height;
+  };
 
   document.querySelector("#loading-projects").classList.add("hide");
   document.querySelector(".menu-btn").classList.remove("hide");

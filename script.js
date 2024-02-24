@@ -1,3 +1,5 @@
+window.location.replace("https://interactivematerials.info");
+
 let active = -1, x = -1, y = -1;
 let activeGallery = 1;
 const BREAK_WIDTH = 0;
